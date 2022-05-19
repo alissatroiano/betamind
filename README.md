@@ -1,108 +1,255 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+![Theme: Connect May 2022](https://res.cloudinary.com/djdefbnij/image/upload/v1651743047/Hackathons/May_-_SODA_Social_Hackathon_2_Mental_Health_3_1_arzjpd.jpg)
 
-Welcome USER_NAME,
+# Team_7
+A social blogging website with iteractive useful features
+The team members for this project were: Daniel PR, Alissa Troiano, Andrew Curley,Oliver Cadman & Sandra Atino
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+![Mock-up of site]()
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+Deployed website can be viewed [here]().
 
-## Gitpod Reminders
+## Project Goals
+  
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## UX Design
 
-`python3 -m http.server`
+### Site Owner Goals
 
-A blue button should appear to click: _Make Public_,
+### User Stories
+- As a user, I want to understand the purpose of the site easily.
+- As a user, I want to navigate throughout the site easily and efficiently.
+- As a user, I want to experience responsive design, so I can use the site on different devices.
+- As a user, I want to find easy to understand content about social connections & interactivity.
+- As a user, I want to enjoy simple and streamlined design that emulates the purpose of the site.
+- As a user, I want to find social media links so i can easily reach out to the company for any queries.
 
-Another blue button should appear to click: _Open Browser_.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A blue button should appear to click: _Make Public_,
+### **Existing Features**
+* **Responsive design** - the site has been developed using Bootstrap and custom CSS to ensure the site is responsive across all devices.
 
-Another blue button should appear to click: _Open Browser_.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+* **Header**
+    ![Header](static/images/header.jpg)
 
-To log into the Heroku toolbelt CLI:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+* **Landing Page**
+    ![Landing page](static/images/landing-page.jpeg)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+* **Footer**
+    ![Footer](static/images/footer.jpg)
+    • There are the avatars of the team members and facilitator who have worked towards the development of this website, and they can be connected at their GitHub platform.
+    • There a hover effect on each avatar with tooltip pop up displaying names of the team members 
+    • A copyright statement with team name.
+    • Social media links to follow the website.
 
-------
 
-## Release History
+    
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### Wireframes
+The wireframes for this project were developed using [Balsamiq](https://balsamiq.com/).
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+* **Desktop Wireframes:**
+        
+    Home page
+    ![Home page](wireframes/Landing%20page.png) 
+    Game page
+    
+    About page
+    ![About page](wireframes/About.png)
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+## Design
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+### Structure
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+A simple clean design with easy to use buttons handles the navigation throughout the app.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+### Colour Scheme
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+[shutterstock color palettes](https://www.shutterstock.com/blog/color-palettes-for-websites)
+![color palette](/static/images/colorpalette.png)
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+### Database Schema
+### Images
+ * All images used are from pexels ,freepik , Canva and are free to used for educational purposes.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+### Typography
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+ [Google Fonts](https://fonts.google.com/) was used to select the fonts.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+## Technologies
+### Backend functionality
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+### Languages
+- HTML
+- CSS3
+- JavaScript
+- Flask
+- Python
 
-------
+### Frameworks and Libraries
+- hover css for hover effects through out the site.
+- animate.css
 
-## FAQ about the uptime script
+- [Am I Responsive?](http://ami.responsivedesign.is/) was used to create the mock ups.
+- [Balsamiq](https://balsamiq.com/) was used to create the wireframes.
+- [Bootstrap 5.1.3](https://getbootstrap.com/) was used to contribute to responsiveness and styling of the site.
+- [Font Awesome](https://fontawesome.com/) was used for the icons.
+- Git was used for version control ad to push code to GitHub.
+- [GitHub](https://github.com/) was used to store the repository.
+- [GitPod](https://www.gitpod.io/) was used as the IDE to develop the project.
+- [GitHub Projects]() was used to manage the workflow of the project.
+- [Google Fonts](https://fonts.google.com/) were used to select fonts for the site.
+- <a href="https://developers.google.com/maps/documentation" target="_blank">Google Maps</a> (used to choose a specific location on the map)
+- [MongoDB](https://www.mongodb.com/1) is the fully managed cloud database service used for the project.
+- [Heroku](https://dashboard.heroku.com/) is the cloud platform to deploying the app.
+- [Flask](https://flask.palletsprojects.com/en/1.1.x/) is the web framework used to provide libraries, tools and technologies for the app.
+- [Jinja](https://jinja.palletsprojects.com/en/2.11.x/) is used for Python templating
+- [Werkzeug](https://werkzeug.palletsprojects.com/en/1.0.x/) is used for password hashing and authentication and autohorization.
 
-**Why have you added this script?**
+## Testing
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+### [HTML Validator:](https://validator.w3.org/)
+ passed
 
-**How will this affect me?**
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+### [CSS Validator:](https://jigsaw.w3.org/css-validator/)
+passed
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+### [JSHint:](https://jshint.com/)
+no error
 
-**So….?**
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+### [Python Syntax Checker PEP8](https://www.pythonchecker.com/)
+no error
 
-**Can I opt out?**
+### Lighthouse: 
+![Home page](static/images/lighthouse_home.png)
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+## Bugs
 
-**Anything more?**
+## Deployment
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+#### Requirements 
+- Python3 
+- Github account 
+- MongoDB account 
+- Heroku account
 
----
+#### Clone the project 
+To make a local clone, follow the following steps. 
+1. Log in to GitHub and go to the repository. 
+2. Click on the green button with the text **"Code".**
+3. Click on **"Open with GitHub Desktop"** and follow the prompts in the GitHub Desktop Application or follow the instructions from **[this link](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop)** to see how to clone the repository in other ways. 
 
-Happy coding!
+#### Working with the local copy
+1. Install all the requirements: Go to the workspace of your local copy. In the terminal window of your IDE type: **pip3 install -r requirements.txt**.
+2. Create a database in MongoDB  
+    - Signup or login to your MongoDB account.
+    - Create a new Database called "mother_earth" in [MongoDB Atlas](https://www.mongodb.com/). .
+    - In the "mother_earth" database create the **quiz_rewards** collection.
+        ###### quiz_rewards
+        ```
+        {
+            _id: <ObjectId>,
+            name: <String>,
+            lat: <Decimal>,
+            lng: <Decimal>,
+            score: <Integer32>,
+        }
+3. Create the environment variables 
+    - Create a .gitignore file in the root directory of the project.
+    - Add the env.py file in the .gitignore.
+    - Create the file env.py. This  will contain all the environment variables.
+    ```
+    import os
+    os.environ.setdefault("IP", "Added by developer")
+    os.environ.setdefault("PORT", "Added by developer")
+    os.environ.setdefault("SECRET_KEY", "Added by developer")
+    os.environ.setdefault("MONGO_URI", "Added by developer")
+    os.environ.setdefault("MONGO_DBNAME", "Added by developer")
+    ```
+4. Run the app: Open your terminal window in your IDE. Type python3 app.py and run the app.
+
+#### Heroku Deployment  
+1. Set up local workspace for Heroku 
+    - In terminal window of your IDE type: ```pip3 freeze -- local > requirements.txt.``` (Heroku detects this as a Python app. The reason that they've been able to detect Python is because we have a requirements.txt file)
+
+    - In terminal window of your IDE type: ```echo "python app.py" > Procfile``` (The file is needed for Heroku to know which file is needed as entry point.)
+1. Set up Heroku: create a Heroku account, create a new app and select your region. 
+2. Deployment method 'Github'
+    - Click on the **Connect to GitHub** section in the deploy tab in Heroku. 
+        - Search your repository to connect with it.
+        - When your repository appears click on **connect** to connect your repository with the Heroku. 
+    - Go to the settings app in Heroku and go to **Config Vars**. Click on **Reveal Config Vars**.
+        - Enter the variables contained in your env.py file. it is about: **IP, PORT, SECRET_KEY, MONGO_URI, MONGO_DBNAME**
+3. Push the requirements.txt and Procfile to the repository. 
+     ```
+    $ git add requirements.txt
+    $ git commit -m "Add requirements.txt"
+
+    $ git add Procfile 
+    $ git commit -m "Add Procfile"
+    ```
+4. Automatic deployment: Go to the deploy tab in Heroku and scroll down to **Automatic deployments**. Click on **Enable Automatic Deploys**. By **Manual deploy** click on **Deploy Branch**.
+
+Heroku will receive the code from Github and host the app using the required packages. 
+Click on **Open app** in the right corner of your Heroku account. The app wil open and the live link is available from the address bar. 
+
+
+### Forking the GitHub Repository
+The repository can be forked on GitHub, this creates a copy of the repository that can be viewed or amended without affecting the original repository. This can be done using the following steps:
+
+- Login to GitHub and locate the repository as before.
+- At the top right of the repository (under your avatar) locate the Fork button and click this button.
+- There should now be a copy of the repository in your own GitHub account, which you can amend.
+
+### Cloning the GitHub Repository
+A clone of the repository can be made, which will create a local copy on your own computer. Changes can be made to this local copy and it will not affect the original repository. Follow these steps to clone the Sunrise Yoga repository.
+
+- Login to GitHub and locate the repository as before.
+- Click the button called "Code".
+- Under HTTPS copy the link provided, in this case ().
+- Go to Gitpod or whichever IDE you are using and open the Terminal.
+- Change the current working directory to the location where you want the cloned directory to be made.
+- Type 'git clone' followed by the url you copied in step 3.
+- Press "Enter" to create the local clone.
+- You can refer to the GitHub documentation for more detailed information on the above process [here](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository).
+
+## Credits
+
+### Content
+
+#### Website Content
+    
+#### Fonts
+- Fonts used are from [Google Fonts](https://fonts.google.com/)
+- Icons used are from [Font Awesome](https://fontawesome.com/)
+
+#### Code Content
+- [Stack Overflow](https://stackoverflow.com/)
+
+### Media
+
+#### Images
+* Hero image used from [Pexels](https://www.pexels.com/@rostislav/)
+* some images from: [freepik](https://www.freepik.com/search?format=search&query=animatedtoilet&type=vector)
+* Hackathon banner designed & modified  from[canva](https://www.canva.com/)
+*  background logo images in contact ,quiz splash screen and quiz are from [Canva](https://www.canva.com)
+* Images gif in the resource section are from google Commons
+* Illustrations from [UnDraw](https://undraw.co/illustrations)
+
+
+#### Audio
+
+
+## Acknowledegments:
+We thank [Code Institute](https://codeinstitute.net/se/5-day-coding-challenge/?utm_term=code%20institute&utm_campaign=CI+-+SWE+-+Search+-+Brand&utm_source=adwords&utm_medium=ppc&hsa_acc=8983321581&hsa_cam=14660337051&hsa_grp=134087657984&hsa_ad=546251838362&hsa_src=g&hsa_tgt=kwd-319867646331&hsa_kw=code%20institute&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gclid=Cj0KCQiArt6PBhCoARIsAMF5wajobw5RmzmDSvl-nqpJtRaVQKF-Znj4iDi1CR3oW-l9rBFnjMP_T1QaAvkOEALw_wcB) for organizing this Hackathon.
+* All the Team members
+
+
