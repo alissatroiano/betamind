@@ -38,11 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-<<<<<<< HEAD
+
 
     #local
     'chatbot',
-=======
+
     # Custom Apps
     'home',
 
@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
->>>>>>> 690e303e7d8cce3bde09e5f9757eb2e847645dd7
+
 ]
 
 MIDDLEWARE = [
