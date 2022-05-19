@@ -109,6 +109,7 @@ A simple clean design with easy to use buttons handles the navigation throughout
 - [Flask](https://flask.palletsprojects.com/en/1.1.x/) is the web framework used to provide libraries, tools and technologies for the app.
 - [Jinja](https://jinja.palletsprojects.com/en/2.11.x/) is used for Python templating
 - [Werkzeug](https://werkzeug.palletsprojects.com/en/1.0.x/) is used for password hashing and authentication and autohorization.
+- [chatterbot](https://chatterbot.readthedocs.io/en/stable/) library, chatter-bot-corpus ,spacy  used to build chatbot
 
 ## Testing
 
