@@ -1,13 +1,144 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    {% block core_css %}
+        <!-- Bootstrap CSS CDN -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <!-- FontAwesome CDN -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="{% static "css/base.css" %}">
+    {% endblock %}
+    {% block extra_css %}{% endblock %}
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-    {% block content %}
+    <nav class="navbar navbar-expand-md">
+        <div class="container-fluid navbar_container">
+             <a class="navbar-brand primary_font large_text light_font white_font" href="#">BETAMIND</a>
+             <button class="navbar-toggler"
+            data-bs-toggle="collapse"
+            data-bs-target="#main-nav"
+            aria-controls="main-nav"
+            aria-expanded="false"
+            aria-label="Toggle navigation dropdown">
+                <span class="navbar-toggler-icon">
+                    <i class="fas fa-bars navbar-mobile-toggler"></i>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse order-0" id="main-nav">
+                <div class="row">
+                    <div class="col-md-12 col-6">
+                        <ul class="navbar-nav">
+                            {% if request.user.is_authenticated %}
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbar_dropdown_menu_link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">My Account</a>
+                                <div class="dropdown-menu account-menu animate__animated animate__fadeInLeft p-0" aria-labelledby="navbar_dropdown_menu_link">
+
+                                </div>
+                            </li>
+                            {% endif %}
+                            {% if not request.user.is_authenticated %}
+                                <li class="nav-item">
+                                    <a class="nav-link primary_font light_font medium_text white_font" href="#">Sign In</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link primary_font light_font medium_text white_font" href="#">Register</a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Main Content -->
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <footer>
+        <div class="container-fluid footer">
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="text-center primary_font white_font">The Team</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 avatar_container">
+                    <div class="avatar-wrapper">
+                        <a href="https://github.com/alissatroiano" target="_blank">
+                            <img src="{{MEDIA_URL}}alissa.jpeg"
+                            alt="Alissa"
+                            width="80"
+                            height="80"
+                            class="dev_avatar">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 avatar_container">
+                    <div class="avatar-wrapper">
+                        <a href="https://github.com/Danpr1984" target="_blank">
+                            <img src="{{MEDIA_URL}}daniel.png"
+                            alt="Daniel"
+                            width="80"
+                            height="80"
+                            class="dev_avatar">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 avatar_container">
+                    <div class="avatar-wrapper">
+                        <a href="https://github.com/KeepKindling" target="_blank">
+                            <img src="{{MEDIA_URL}}andrew.png"
+                            alt="Andrew"
+                            width="80"
+                            height="80"
+                            class="dev_avatar">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 avatar_container">
+                    <div class="avatar-wrapper">
+                        <a href="https://github.com/Atinos31" target="_blank">
+                            <img src="{{MEDIA_URL}}sandra.png"
+                            alt="Sandra"
+                            width="80"
+                            height="80"
+                            class="dev_avatar">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 avatar_container">
+                    <div class="avatar-wrapper">
+                        <a href="https://github.com/OliverCadman" target="_blank">
+                            <img src="{{MEDIA_URL}}oliver.jpeg"
+                            alt="Oliver"
+                            width="80"
+                            height="80"
+                            class="dev_avatar">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+   
+           
+    <!-- JS -->
+    {% block postload_js %}
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     {% endblock %}
 </body>
 </html>

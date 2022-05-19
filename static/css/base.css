@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Work+Sans:wght@300;400&display=swap');
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    /* Test Background as I couldn't stand the harsh white */
+    background: rgb(58, 48, 217);
+    background: linear-gradient(90deg, rgba(58, 48, 217, 1) 1%, rgba(75, 34, 149, 1) 99%);
+}
+
+/* Utility Classes */
+
+.primary_font {
+    font-family: "Montserrat", sans-serif;
+}
+
+.white_font {
+    color: #fafafa;
+}
+
+.light_font {
+    font-weight: 300;
+}
+
+.medium_light_font {
+    font-weight: 400;
+}
+
+.medium_font {
+    font-weight: 500;
+}
+
+.large_text {
+    font-size: 2rem;
+}
+
+.medium_text {
+    font-size: 1.5rem;
+}
+
+.medium_small_text {
+    font-size: 1.25rem;
+}
+
+.small_text {
+    font-size: 0.85rem;
+}
+
+/* Footer */
+
+.content {
+    flex: 1 0 auto;
+}
+
+.footer {
+    flex-shrink: 0;
+    padding: 1.5rem 0;
+}
+
+.avatar_container {
+    display: flex;
+    justify-content: center;
+}
+
+.dev_avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+footer .row:nth-child(1) {
+    margin-bottom: 1.5rem;
+}
+
+footer .row:nth-child(3) {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+
+/* Tablet Devices */
+@media screen and (min-width: 768px) {
+
+    /* Utility Classes */
+
+    .large_text {
+        font-size: 2.5rem;
+    }
+
+    .medium_text {
+        font-size: 1.75rem;
+    }
+
+    .medium_small_text {
+        font-size: 1.25rem;
+    }
+
+    .small_text {
+        font-size: 0.85rem;
+    }
+
+    /* Navbar */
+
+    .navbar-collapse {
+        flex-grow: 0;
+    }
+
+    .navbar-brand {
+        order: 0;
+    }
+
+    .navbar-toggler {
+        order: 1;
+    }
+
+    .nav-link {
+        margin: 0 1.5rem;
+    }
+
+    /* Footer */
+
+    .dev_avatar {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Start of Larger Screens */
+@media screen and (min-width: 992px) {}
