@@ -1,7 +1,11 @@
 ![Theme: Connect May 2022](https://res.cloudinary.com/djdefbnij/image/upload/v1651743047/Hackathons/May_-_SODA_Social_Hackathon_2_Mental_Health_3_1_arzjpd.jpg)
 
-# Team_7
-A social blogging website with iteractive useful features
+
+# BetaMind
+A community-led platform for users to reach out to others in their times of need. Users can post about their feelings and their current mood, and others can offer their support by offering their recognition, and communicating with those looking for someone to lean on.
+
+Additionally, users can talk to our own Chatbot, and enjoy uplifting content.
+
 The team members for this project were: Daniel PR, Alissa Troiano, Andrew Curley,Oliver Cadman & Sandra Atino
 
 ![Mock-up of site]()
@@ -9,20 +13,42 @@ The team members for this project were: Daniel PR, Alissa Troiano, Andrew Curley
 Deployed website can be viewed [here]().
 
 ## Project Goals
-  
+
+The goal of this project is to provide a sleek, intuitive solution for users who need to discuss their emotions, whether negative or positive, with an un-biased, attentive community. The website should intelligently determine whether the user is in need of professional help, through the analysis of key words in the user's text content when making a blog post. If a user requires professional help, they should be presented with a comprehensive list of options to pursue, to help them in a positive direction.
+
+If the user doesn't want to talk about their feelings, they should also enjoy the extra features of the website; our custom ChatBot 'OPPO' and interactive games.
 
 ## UX Design
 
 ### Site Owner Goals
 
-### User Stories
-- As a user, I want to understand the purpose of the site easily.
-- As a user, I want to navigate throughout the site easily and efficiently.
-- As a user, I want to experience responsive design, so I can use the site on different devices.
-- As a user, I want to find easy to understand content about social connections & interactivity.
-- As a user, I want to enjoy simple and streamlined design that emulates the purpose of the site.
-- As a user, I want to find social media links so i can easily reach out to the company for any queries.
+1. To establish BetaMind as a trusted brand when users are looking for a friendly community to talk to.
+2. To maximise user retention through a positive, intuitive UX.
+3. To ensure that the website is responsive across all screen sizes.
+4. Employ a mobile-first design, to cater to users who may be commuting or away from a desktop/laptop computer.
+5. To guarantee that the system recognizes when a person is feeling particularly terrible, and suggests options for professional help.
 
+### User Stories
+- As a user I want to navigate the website intuitively and with ease, so my time isn't wasted.
+- As a user, I want to be able to register to the website, so my details are saved.
+- As a user, I want to be able to remain anonymous, so my identity is not revealed.
+- As a user, I want to be able to write a post, so I can tell people how I feel.
+- As a user, I want to be able to present my mood when writing a post, to give the post more emotional context.
+- As a user I want to be able to visit a blog, so I can see other posts.
+- As a user, I want to be able to reply to other user's posts, so I offer my opinion to their feelings.
+- As a user, I want to be feel-good content, so my mood can be improved.
+- As a user, I want to click a panic button, so I can get professional help.
+
+
+### Wireframes
+The wireframes for this project were developed using [Balsamiq](https://balsamiq.com/).
+
+* [Home Page](documentation/wireframes/betamind_landingpage.png)
+* [Login Page](documentation/wireframes/betamind_login.png)
+* [Register Page](documentation/wireframes/betamind_register.png)
+* [Blog Page](documentation/wireframes/betamind_blog.png)
+* [Blog Post (mood board)](documentation/wireframes/betamind_moodboard.png)
+* [Blog Post](documentation/wireframes/betamind_blogpost.png)
 
 
 ### **Existing Features**
@@ -43,20 +69,6 @@ Deployed website can be viewed [here]().
     • A copyright statement with team name.
     • Social media links to follow the website.
 
-
-    
-
-### Wireframes
-The wireframes for this project were developed using [Balsamiq](https://balsamiq.com/).
-
-* **Desktop Wireframes:**
-        
-    Home page
-    ![Home page](wireframes/Landing%20page.png) 
-    Game page
-    
-    About page
-    ![About page](wireframes/About.png)
 
 ## Design
 
