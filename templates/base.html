@@ -13,7 +13,7 @@
         <!-- FontAwesome CDN -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <!-- Custom CSS -->
-        <link rel="stylesheet" href="{% static "css/base.css" %}">
+       <link rel="stylesheet" href="{% static 'css/base.css'%}">
     {% endblock %}
     {% block extra_css %}{% endblock %}
     <title>{% block title %}{% endblock %}</title>
@@ -61,7 +61,7 @@
         <div class="container-fluid footer">
             <div class="row">
                 <div class="col-12">
-                    <h3 class="text-center primary_font white_font">The Team</h3>
+                    <h3 class="text-center primary_font white_font"></h3>
                 </div>
             </div>
             <div class="row">
@@ -87,18 +87,17 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-4 avatar_container">
+                   <div class="col-4 avatar_container">
                     <div class="avatar-wrapper">
-                        <a href="https://github.com/KeepKindling" target="_blank">
-                            <img src="{{MEDIA_URL}}andrew.png"
-                            alt="Andrew"
+                        <a href="https://github.com/alissatroiano" target="_blank">
+                            <img src="{{MEDIA_URL}}alissa.jpeg"
+                            alt="Alissa"
                             width="80"
                             height="80"
                             class="dev_avatar">
                         </a>
                     </div>
                 </div>
-            </div>
             <div class="row">
                 <div class="col-4 avatar_container">
                     <div class="avatar-wrapper">
