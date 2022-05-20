@@ -3,6 +3,9 @@
 ## PR Description:
 - Add a brief description of the changes you are making.
 
+## Dependency Changes:
+- Add a list of dependencies that you are adding or removing .
+
 ## Issus Resolved:
 - If your pull request fixes an issue, please add a link to the issue.
 
