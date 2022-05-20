@@ -27,16 +27,16 @@ class UserProfile(models.Model):
             return "Default Alias"
 
 
-# @receiver(post_save, sender=settings.AUTH_USER_MODEL)
-# def create_or_update_user(sender, instance, created, **kwargs):
-#     """
-#     Create a User Profile when a user registers,
-#     or update the profile if it's already been created.
-#     """
-#     if created:
-#         UserProfile.objects.create(auth_user=instance)
-#         print(UserProfile.objects.get(auth_user=instance))
+@receiver(post_save, sender=settings.AUTH_USER_MODEL)
+def create_or_update_user(sender, instance, created, **kwargs):
+    """
+    Create a User Profile when a user registers,
+    or update the profile if it's already been created.
+    """
+    if created:
+        UserProfile.objects.create(auth_user=instance)
+        print(UserProfile.objects.get(auth_user=instance))
 
-#     # Otherwise, save the profile.
-#     instance.userprofile.save()
+    # Otherwise, save the profile.
+    instance.userprofile.save()
 
