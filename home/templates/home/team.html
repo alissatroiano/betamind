@@ -1,47 +1,118 @@
 {% extends "base.html" %}
  {% load static %}
 {% block title %}BetaMind{% endblock %}
-
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <!-- jquery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script
+  {% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+{% endblock %}
 
 {% block content %}
+
+<!-- Could be moved later to base.CSS but i did not want to crowd it. -->
+<style>
+     body{
+        background: rgb(35, 32, 80);
+        background:  linear-gradient(90deg, rgb(73, 12, 131) 1%, rgb(31, 3, 87) 99%);;
+    } 
+     h1 {
+            font-size: 36px;
+            color: #fafafa;
+            font-weight: bold;
+        }
+
+        h3 {
+            font-size: 24px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        
+        #team i {
+            font-size: 26px;
+            color: #555;
+        }
+
+        #team p {
+            font-weight: 500;
+        }
+
+        #team .card {
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgb(58, 48, 217);
+            transition: all 0.3s ease-in;
+            -webkit-transition: all 0.3s ease-in;
+            -moz-transition: all 0.3s ease-in;
+        }
+
+        #team .card:hover {
+            color: #fff;
+             background:rgba(255,255,255,0.1);
+             /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#7abcff+-1,60abf8+0,60abf8+0,7abcff+0,60abf8+2,7abcff+3,7abcff+6,7abcff+6,60abf8+8,60abf8+11,7abcff+12,7abcff+12,60abf8+12,60abf8+12,60abf8+13,7abcff+14,60abf8+14,60abf8+14,7abcff+18,7abcff+18,60abf8+18,60abf8+21,60abf8+21,60abf8+22,60abf8+22,60abf8+25,60abf8+25,60abf8+27,60abf8+27,7abcff+28,60abf8+28,60abf8+28,60abf8+30,60abf8+30,60abf8+31,60abf8+31,60abf8+33,60abf8+33,60abf8+33,60abf8+33,4044a5+86,4044a5+86,4044a5+99 */
+             background: #7abcff; /* Old browsers */
+             background: -moz-linear-gradient(top,  #97c6f5 -1%, #9dcaf7 0%, #a3caf1 0%, #c5ddf5 0%, #cce4fc 2%, #c9e0f7 3%, #c5daf0 6%, #b6d5f5 6%, #fff 8%, #b5d9fd 11%, #7abcff 12%, #7abcff 12%, #60abf8 12%, #60abf8 12%, #60abf8 13%, #7abcff 14%, #60abf8 14%, #60abf8 14%, #7abcff 18%, #7abcff 18%, #60abf8 18%, #60abf8 21%, #60abf8 21%, #60abf8 22%, #60abf8 22%, #60abf8 25%, #60abf8 25%, #60abf8 27%, #60abf8 27%, #7abcff 28%, #60abf8 28%, #60abf8 28%, #60abf8 30%, #60abf8 30%, #60abf8 31%, #60abf8 31%, #60abf8 33%, #60abf8 33%, #60abf8 33%, #60abf8 33%, #4044a5 86%, #4044a5 86%, #4044a5 99%); /* FF3.6-15 */
+             background: -webkit-linear-gradient(top,  #7abcff -1%,#60abf8 0%,#60abf8 0%,#7abcff 0%,#60abf8 2%,#7abcff 3%,#7abcff 6%,#7abcff 6%,#60abf8 8%,#60abf8 11%,#7abcff 12%,#7abcff 12%,#60abf8 12%,#60abf8 12%,#60abf8 13%,#7abcff 14%,#60abf8 14%,#60abf8 14%,#7abcff 18%,#7abcff 18%,#60abf8 18%,#60abf8 21%,#60abf8 21%,#60abf8 22%,#60abf8 22%,#60abf8 25%,#60abf8 25%,#60abf8 27%,#60abf8 27%,#7abcff 28%,#60abf8 28%,#60abf8 28%,#60abf8 30%,#60abf8 30%,#60abf8 31%,#60abf8 31%,#60abf8 33%,#60abf8 33%,#60abf8 33%,#60abf8 33%,#4044a5 86%,#4044a5 86%,#4044a5 99%); /* Chrome10-25,Safari5.1-6 */
+             background: linear-gradient(to bottom,  #7abcff -1%,#60abf8 0%,#60abf8 0%,#7abcff 0%,#60abf8 2%,#7abcff 3%,#7abcff 6%,#7abcff 6%,#60abf8 8%,#60abf8 11%,#7abcff 12%,#7abcff 12%,#60abf8 12%,#60abf8 12%,#60abf8 13%,#7abcff 14%,#60abf8 14%,#60abf8 14%,#7abcff 18%,#7abcff 18%,#60abf8 18%,#60abf8 21%,#60abf8 21%,#60abf8 22%,#60abf8 22%,#60abf8 25%,#60abf8 25%,#60abf8 27%,#60abf8 27%,#7abcff 28%,#60abf8 28%,#60abf8 28%,#60abf8 30%,#60abf8 30%,#60abf8 31%,#60abf8 31%,#60abf8 33%,#60abf8 33%,#60abf8 33%,#60abf8 33%,#4044a5 86%,#4044a5 86%,#4044a5 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7abcff', endColorstr='#4044a5',GradientType=0 ); /* IE6-9 */
+
+        }
+
+        #team .card:hover h3,
+        #team .card:hover i {
+            color: #fff;
+        }
+</style>
+
+<!-- section team -->
 <section id="team">
         <div class="container my-3 py-5 text-center">
             <div class="row mb-5">
                 <div class="col">
-                    <h1 class="team-header">Our Team</h1>
-                    <p class="my-3">
-                        This team page has a quirky, vibrant energy that immediately catches your attention – a good
-                        sign for a design company.
+                    <h1 class="team-header">Meet Our Team</h1>
+                    <p class="my-3 text-white">
+                        This team page has a quirky, vibrant energy that immediately catches your attention – a Fab Team.
                     </p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-2 col-md-6 pt-1">
-                    <div class="card h-100">
+                    <div class="card h-100 shadow-lg border-0">
                         <div class="card-body">
-                            <img class="img-fouild rounded w-75 mb-3"
-                                src="https://images.unsplash.com/photo-1554151228-14d9def656e4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=333&q=80"
-                                alt="Sophie">
-                            <h3>Sophie Johnson</h3>
-                            <h5>Software Engineer</h5>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi, recusandae.</p>
+                            <img class="img-fluid rounded-pill w-75 mb-3"
+                                src="https://media-exp1.licdn.com/dms/image/C5603AQEHQylOz3zkQA/profile-displayphoto-shrink_200_200/0/1650021481758?e=1658361600&v=beta&t=eqXJqofCwDb-TvhFTB682iRy1PAjP42ei9x55ZVmIpI"
+                                alt="Andrew">
+                            <h3>Andrew</h3>
+                            <p> I'm a hard worker with a lot of attention for detail and I am always eager to learn and improve my skills.</p>
                             <div class="d-flex flex-row justify-content-center">
                                 <div class="p-4">
-                                    <a href="#">
-                                        <i class="fab fa-facebook-f"></i>
+                                    <a href="https://github.com/KeepKindling">
+                                        <i class="fab fa-github fa-xl"></i>
+                                    </a>
+                                </div>
+                                 <div class="p-4">
+                                    <a href="https://www.linkedin.com/in/andrew-curley-798483235/">
+                                        <i class="fab fa-linkedin fa-xl"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 pt-1">
+                    <div class="card h-100 shadow-lg border-0">
+                        <div class="card-body">
+                            <img class="img-fluid rounded-pill w-75 mb-3"
+                                src="https://media-exp1.licdn.com/dms/image/C4D03AQFmC2-gYzjU7g/profile-displayphoto-shrink_200_200/0/1648558542444?e=1658361600&v=beta&t=oNUKxk-fjE0N-nIm4pxNTP8LvULIU3jgYhXsxxb1HKA"
+                                alt="sandra">
+                            <h3>Sandra</h3>
+                            <p>Results driven Full Stack dev ,passionate about building production ready web applications.</p>
+                            <div class="d-flex flex-row justify-content-center">
+                                <div class="p-4">
+                                    <a href="https://github.com/Atinos31">
+                                        <i class="fab fa-github fa-xl"></i>
                                     </a>
                                 </div>
                                 <div class="p-4">
-                                    <a href="#">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                </div>
-                                <div class="p-4">
-                                    <a href="#">
-                                        <i class="fab fa-instagram"></i>
+                                    <a href="https://www.linkedin.com/in/sandra-atino/">
+                                        <i class="fab fa-linkedin fa-xl"></i>
                                     </a>
                                 </div>
                             </div>
@@ -50,58 +121,22 @@
                 </div>
 
                 <div class="col-lg-2 col-md-6 pt-1">
-                    <div class="card h-100">
+                    <div class="card h-100  shadow-lg border-0">
                         <div class="card-body">
-                            <img class="img-fouild rounded w-75 mb-3"
-                                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80"
-                                alt="lucy">
-                            <h3>Lucy Sanchez</h3>
-                            <h5>FrontEnd Developer</h5>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi, recusandae.</p>
-                            <div class="d-flex flex-row justify-content-center">
-                                <div class="p-4">
-                                    <a href="#">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                </div>
-                                <div class="p-4">
-                                    <a href="#">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                </div>
-                                <div class="p-4">
-                                    <a href="#">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-2 col-md-6 pt-1">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <img class="img-fouild rounded w-75 mb-3"
+                            <img class="img-fluid rounded-pill w-75 mb-3"
                                 src="https://avatars.githubusercontent.com/u/56362524?v=4"
-                                alt="Brad">
-                            <h3>Brad Smith</h3>
-                            <h5>Scrum Master</h5>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi, recusandae.</p>
+                                alt="alissa">
+                            <h3>Alissa</h3>
+                            <p>I'm passionate about developing robust, Full-stack applications that solve business needs.</p>
                             <div class="d-flex flex-row justify-content-center">
                                 <div class="p-4">
-                                    <a href="#">
-                                        <i class="fab fa-facebook-f"></i>
+                                    <a href="https://github.com/alissatroiano">
+                                        <i class="fab fa-github fa-xl"></i>
                                     </a>
                                 </div>
                                 <div class="p-4">
-                                    <a href="#">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                </div>
-                                <div class="p-4">
-                                    <a href="#">
-                                        <i class="fab fa-instagram"></i>
+                                    <a href="https://www.linkedin.com/in/alissatroiano/">
+                                        <i class="fab fa-linkedin fa-xl"></i>
                                     </a>
                                 </div>
                             </div>
@@ -110,28 +145,22 @@
                 </div>
 
                 <div class="col-lg-2 col-md-6 pt-1">
-                    <div class="card h-100">
+                    <div class="card h-100 shadow-lg border-0">
                         <div class="card-body">
-                            <img class="img-fouild rounded w-75 mb-3"
-                                src="https://ca.slack-edge.com/T0L30B202-UTAPGBN1M-c824af7bbd8a-512"
-                                alt="Brad">
-                            <h3>Brad Smith</h3>
-                            <h5>Scrum Master</h5>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi, recusandae.</p>
+                            <img class="img-fluid rounded-pill w-75 mb-3"
+                                src="https://ca.slack-edge.com/T0L30B202-U01MX4AJ214-6db218865243-512"
+                                alt="oliver">
+                            <h3>Oliver</h3>
+                            <p>A logical & organised Full Stack developer,passionate about building innovative applications</p>
                             <div class="d-flex flex-row justify-content-center">
                                 <div class="p-4">
-                                    <a href="#">
-                                        <i class="fab fa-facebook-f"></i>
+                                    <a href="https://github.com/OliverCadman">
+                                        <i class="fab fa-github fa-xl"></i>
                                     </a>
                                 </div>
                                 <div class="p-4">
-                                    <a href="#">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                </div>
-                                <div class="p-4">
-                                    <a href="#">
-                                        <i class="fab fa-instagram"></i>
+                                    <a href="https://www.linkedin.com/in/oliver-cadman-23663b36/">
+                                        <i class="fab fa-linkedin fa-xl"></i>
                                     </a>
                                 </div>
                             </div>
@@ -139,31 +168,25 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 pt-1">
-                    <div class="card h-100">
+                <div class="col-lg-2 col-md-6 pt-1">
+                    <div class="card h-100  shadow-lg border-0">
                         <div class="card-body">
-                            <img class="img-fouild rounded w-75 mb-3"
-                                src="https://avatars.githubusercontent.com/u/79907183?v=4"
-                                alt="Oliver Cadman
-">
-                            <h3>Oliver Cadman
-</h3>
-                            <h5>Software Engineer</h5>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi, recusandae.</p>
+                            <img class="img-fluid rounded-pill w-75 mb-3"
+                                src="https://ca.slack-edge.com/T0L30B202-U01TCU6PR40-57427670bbb0-512"
+                                alt="Daniel">
+                            <h3>Daniel</h3>
+                            <p>I'm a hard worker with a lot of attention to detail & I'm always eager to learn and improve my skills.</p>
                             <div class="d-flex flex-row justify-content-center">
                                 <div class="p-4">
-                                    <a href="#">
-                                        <i class="fab fa-facebook-f"></i>
+                                    <a href="https://github.com/Danpr1984">
+                                        <i class="fab fa-github fa-xl"></i>
                                     </a>
                                 </div>
+                              
+                                
                                 <div class="p-4">
-                                    <a href="#">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                </div>
-                                <div class="p-4">
-                                    <a href="#">
-                                        <i class="fab fa-instagram"></i>
+                                    <a href="https://www.linkedin.com/in/daniel-porras-january1984/">
+                                        <i class="fab fa-linkedin fa-xl"></i>
                                     </a>
                                 </div>
                             </div>
