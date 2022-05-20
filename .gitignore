@@ -10,3 +10,5 @@ cloudinary_python.txt
 .vscode
 db.sqlite3
 beta/
+.gitpod.yml
+DS_Store
