@@ -60,7 +60,7 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now_add=True)
     deleted_on = models.DateTimeField(blank=True, null=True)
-    status = models.CharField(choices=STATUS, default=0)
+    status = models.CharField(max_length=40, choices=STATUS, default=0)
     mood = models.CharField(max_length=254, choices=MOOD, default=0)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True, )
@@ -78,7 +78,7 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
-    comment_sender = models.ForeignKey(User, on_delete= models.CASCADE,related_name='blog_comments')
+    comment_sender = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.CASCADE,related_name='blog_comments')
     post = models.ForeignKey(Post, on_delete= models.CASCADE,related_name='blog_comments')
     comment = models.TextField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
