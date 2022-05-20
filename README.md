@@ -264,7 +264,6 @@ A clone of the repository can be made, which will create a local copy on your ow
 ## Acknowledegments:
 We thank [Code Institute](https://codeinstitute.net/se/5-day-coding-challenge/?utm_term=code%20institute&utm_campaign=CI+-+SWE+-+Search+-+Brand&utm_source=adwords&utm_medium=ppc&hsa_acc=8983321581&hsa_cam=14660337051&hsa_grp=134087657984&hsa_ad=546251838362&hsa_src=g&hsa_tgt=kwd-319867646331&hsa_kw=code%20institute&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gclid=Cj0KCQiArt6PBhCoARIsAMF5wajobw5RmzmDSvl-nqpJtRaVQKF-Znj4iDi1CR3oW-l9rBFnjMP_T1QaAvkOEALw_wcB) for organizing this Hackathon.
 
-- [https://replika.ai/] Replika
-* All the Team members
-
 - [Velog](https://velog.io/@daylee/Blog-with-Django-Codemy.com-12-CategoriesSlugify-Category-Page-URLs) was used to create the blog model.
+
+- The solution for unstaging sqlite3 database file after pushing it to Git was found in Django's documentation - [Django](https://forum.djangoproject.com/t/just-realized-that-i-need-to-add-db-sqlite3-to-gitignore-file/9662)
