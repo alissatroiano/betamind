@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'home',
     'core',
     'profiles',
+    'blog',
 
     # Allauth
     'allauth',

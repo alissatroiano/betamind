@@ -267,4 +267,4 @@ We thank [Code Institute](https://codeinstitute.net/se/5-day-coding-challenge/?u
 - [https://replika.ai/] Replika
 * All the Team members
 
-
+- [Velog](https://velog.io/@daylee/Blog-with-Django-Codemy.com-12-CategoriesSlugify-Category-Page-URLs) was used to create the blog model.
