@@ -1,7 +1,5 @@
-from django.db import models
 
 """Auth User Model"""
-
 from django.db import models
 from django.contrib.auth.models import (
     AbstractBaseUser,
@@ -21,10 +19,10 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
 
         return user
-        
+
     def create_superuser(self, username, password=None, **extra_fields):
         """Create, save and return a new superuser"""
-        
+
         user = self.model(username=username, **extra_fields)
         user.set_password(password)
         user.is_staff = True
@@ -43,7 +41,3 @@ class User(AbstractBaseUser, PermissionsMixin):
     objects = UserManager()
 
     USERNAME_FIELD = "username"
-
-
-
-

@@ -8,7 +8,8 @@ node_modules/
 .github/
 cloudinary_python.txt
 .vscode
+.DS_Store
+*.sqlite3
 db.sqlite3
-beta/
-.gitpod.yml
-DS_Store
+db.sqlite3-wal
+db.sqlite3-shm
