@@ -26,12 +26,13 @@ SECRET_KEY = 'django-insecure-z-&c%)_=$3mm%@t7lyj4+@0@rz4i0^jdfc=&n!6cm4!@gko!1l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'https://8000-olivercadman-betamind-ugu21viax73.ws-eu45.gitpod.io/']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,7 +42,7 @@ INSTALLED_APPS = [
 
 
     #local
-    'chatbot',
+    
 
     # Custom Apps
     'home',
@@ -65,6 +66,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'betamind.urls'
+
+CSRF_TRUSTED_ORIGINS = ['https://olivercadman-betamind-ugu21viax73.ws-eu45.gitpod.io/']
 
 TEMPLATES = [
     {
@@ -136,6 +139,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
