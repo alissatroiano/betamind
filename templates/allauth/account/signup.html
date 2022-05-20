@@ -1,21 +1,76 @@
 {% extends "account/base.html" %}
+{% load static %}
+
+<!-- CSS Files -->
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static "css/auth.css" %}">
+{% endblock %}
 
 {% load i18n %}
+{% load crispy_forms_tags %}
 
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
-{% block content %}
-<h1>{% trans "Sign Up" %}</h1>
+{% block inner_content %}
 
-<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+<div class="container auth_container">
+  <div class="row">
+    <div class="col-12 centered">
+        <div class="auth_form_wrapper">
+          <div class="row">
+            <div class="col-6 d-md-block d-none">
+              <!-- Vector -->
+              <div class="auth_vector_wrapper">
+                <img src="{{MEDIA_URL}}auth_vector_1.jpg" alt="Vector graphic of someone helping another keep dry."
+                width="300" height="300" class="auth_vector">
+              </div>
+            </div>
+              <div class="col-12 col-md-6">
+                <h1 class="large_text primary_font">{% trans "Sign Up To BetaMind" %}</h1>
+                 <div class="auth_message">
+                      <p class="secondary_font">{% blocktrans %}Already a member?
+                      <a href="{{ login_url }}">Login.</a>{% endblocktrans %}</p>
+                </div>
+                <!-- Form -->
+                <form class="signup auth_form" id="signup_form" method="post" action="{% url 'account_signup' %}">
+                  {% csrf_token %}
+                  {% for field in form %}
+                    {% if field.name != "email" %}
+                      {{ field|as_crispy_field }}
+                    {% endif %}
+                  {% endfor %}
+                  {% if redirect_field_value %}
+                  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                  {% endif %}
+                  <button type="submit" class="btn auth_btn secondary_font white_font">{% trans "Sign Up" %}</button>
+                </form>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <button type="submit">{% trans "Sign Up" %} &raquo;</button>
-</form>
+<div class="container auth_container">
+  <div class="row">
+    <div class="col-12 centered">
+        <div class="auth_form_wrapper">
+          <div class="row">
+            <div class="col-6 d-md-block d-none">
+              <div class="auth_vector_wrapper">
+                <img src="{{MEDIA_URL}}auth_vector_1.jpg" alt="Vector graphic of someone helping another keep dry."
+                width="300" height="300" class="auth_vector">
+              </div>
+            </div>
+              <div class="col-12 col-md-6">
+                <h1 class="large_text primary_font">{% trans "Sign Up To BetaMind" %}</h1>
+                
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 {% endblock %}
