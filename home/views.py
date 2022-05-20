@@ -7,3 +7,9 @@ class HomeView(View):
 
     def get(self, request):
         return render(request, "home/index.html")
+
+class TeamView(View):
+
+    def get(self, request):
+        return render(request, "home/team.html")
+        

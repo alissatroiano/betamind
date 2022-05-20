@@ -26,12 +26,14 @@ SECRET_KEY = 'django-insecure-z-&c%)_=$3mm%@t7lyj4+@0@rz4i0^jdfc=&n!6cm4!@gko!1l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+# CSRF_TRUSTED_ORIGINS = ['https://8000-olivercadman-betamind-ugu21viax73.ws-eu45.gitpod.io/']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -48,6 +50,12 @@ INSTALLED_APPS = [
     # Allauth
     'allauth',
     'allauth.account',
+    'allauth.socialaccount',
+
+    # Crispy Forms
+    'crispy_forms',
+    'crispy_bootstrap5',
+
 ]
 
 MIDDLEWARE = [
@@ -61,6 +69,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'betamind.urls'
+
+# CSRF_TRUSTED_ORIGINS = ['https://olivercadman-betamind-ugu21viax73.ws-eu45.gitpod.io/']
 
 TEMPLATES = [
     {
@@ -77,6 +87,10 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media'
+            ],
+              'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
             ],
         },
     },
