@@ -10,3 +10,6 @@ cloudinary_python.txt
 .vscode
 .DS_Store
 *.sqlite3
+db.sqlite3
+db.sqlite3-wal
+db.sqlite3-shm
