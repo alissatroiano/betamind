@@ -49,6 +49,12 @@ INSTALLED_APPS = [
     # Allauth
     'allauth',
     'allauth.account',
+    'allauth.socialaccount',
+
+    # Crispy Forms
+    'crispy_forms',
+    'crispy_bootstrap5',
+
 ]
 
 MIDDLEWARE = [
@@ -80,6 +86,10 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media'
+            ],
+              'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
             ],
         },
     },
