@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 
     # Custom Apps
     'home',
+    'core',
 
     # Allauth
     'allauth',
@@ -140,3 +141,6 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Configure AUTH_USER_MODEL to use custom user model.
+AUTH_USER_MODEL = 'core.User'
