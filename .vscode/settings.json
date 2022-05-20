@@ -22,6 +22,8 @@
    },
    "files.autoSave": "off",
    "workbench.colorTheme": "Monokai Pro",
+   "files.autoSave": "afterDelay",
+   "workbench.colorTheme": "Visual Studio Dark",
    "terminal.integrated.gpuAcceleration": "canvas",
    "editor.defaultFormatter": "HookyQR.beautify"
 }
