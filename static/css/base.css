@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Work+Sans:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@300;400;500&family=Work+Sans:wght@300;400&display=swap');
 
 html,
 body {
@@ -16,6 +16,10 @@ body {
 /* Utility Classes */
 
 .primary_font {
+    font-family: "Lobster", sans-serif;
+}
+
+.secondary_font {
     font-family: "Montserrat", sans-serif;
 }
 
@@ -36,7 +40,7 @@ body {
 }
 
 .large_text {
-    font-size: 2rem;
+    font-size: 1.7rem;
 }
 
 .medium_text {
@@ -49,6 +53,11 @@ body {
 
 .small_text {
     font-size: 0.85rem;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
 }
 
 /* Footer */
@@ -90,7 +99,7 @@ footer .row:nth-child(3) {
     /* Utility Classes */
 
     .large_text {
-        font-size: 2.5rem;
+        font-size: 2.1rem;
     }
 
     .medium_text {
