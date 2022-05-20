@@ -24,9 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-z-&c%)_=$3mm%@t7lyj4+@0@rz4i0^jdfc=&n!6cm4!@gko!1l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', 'https://8000-olivercadman-betamind-ugu21viax73.ws-eu45.gitpod.io/']
+CSRF_TRUSTED_ORIGINS = ['https://8000-olivercadman-betamind-ugu21viax73.ws-eu45.gitpod.io/']
 
 
 # Application definition
