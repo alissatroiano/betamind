@@ -9,47 +9,53 @@
 {% endblock %}
 
 {% block content %}
-    <div class="sidebar_sm d-lg-none d-block">
-        <div class="profile_image_container_sm">
-                <div class="profile_image_wrapper_sm">
-                    <img src="{{MEDIA_URL}}default_profile_image.webp"
-                    alt="Default Profile Image"
-                    class="profile_image_sm"
-                    width="100"
-                    height="100">
+<div class="container-fluid h-100">
+    <div class="row">
+        <div class="col-12 ">
+            <div class="sidebar_sm d-lg-none d-block">
+                <div class="profile_image_container_sm">
+                    <div class="profile_image_wrapper_sm">
+                        <h1 class="profile_username_sm secondary_font medium_text light_font">Username</h1>
+                        <img src="{{MEDIA_URL}}default_profile_image.webp"
+                        alt="Default Profile Image"
+                        class="profile_image_sm"
+                        width="100"
+                        height="100">
+                    </div>
                 </div>
-              </div>
-        <nav aria-label="breadcrumb">
-            <!-- Nav Breadcrumb Links for Mobile Only -->
-            <ul class="d-flex justify-content-center d-lg-none profile_links_sm">
-                <li class="profile_link_sm">
-                    <a href="#"><i class="fas fa-circle-plus link_icon_sm"></i></a>
-                </li>
-                <li class="profile_link_sm">
-                    <a href="#"><i class="fa-solid fa-rss link_icon_sm"></i></a>
-                </li>
-                <li class="profile_link_sm">
-                    <a href="#"><i class="fa-solid fa-circle-exclamation link_icon_sm"></i></a>
-                </li>
-            </ul>
-        </nav>
+                <nav aria-label="breadcrumb">
+                    <!-- Nav Breadcrumb Links for Mobile Only -->
+                    <ul class="d-flex justify-content-center d-lg-none profile_links_sm">
+                        <li class="profile_link_sm">
+                            <a href="#"><i class="fas fa-circle-plus link_icon_sm"></i></a>
+                        </li>
+                        <li class="profile_link_sm">
+                            <a href="#"><i class="fa-solid fa-rss link_icon_sm"></i></a>
+                        </li>
+                        <li class="profile_link_sm">
+                            <a href="#"><i class="fa-solid fa-circle-exclamation link_icon_sm"></i></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </div>
-    <div class="container-fluid h-100 d-none d-lg-block">
-        <div class="row h-100">
-            <div class="col-12 col-md-4 col-lg-4 col-xl-4 p-0 sidebar_lg">
-              <!-- Profile Image LG -->
-              <div class="profile_image_container_lg">
+    <div class="row h-100">
+        <div class="col-3 sidebar_lg d-none d-lg-block">
+            <!-- Profile Image LG -->
+            <div class="profile_image_container_lg">
                 <div class="profile_image_wrapper_lg">
+                    <h1 class="profile_username_lg secondary_font medium_text white_font light_font">Username</h1>
                     <img src="{{MEDIA_URL}}default_profile_image.webp"
                     alt="Default Profile Image"
                     class="profile_image_lg"
                     width="100"
                     height="100">
                 </div>
-              </div>
-              <hr class="profile_block_divider_lg">
+            </div>
+            <hr class="profile_block_divider_lg">
               <!-- Profile Links LG-->
-              <div class="links_container_lg">
+            <div class="links_container_lg">
                 <ul class="profile_links_lg fa-ul">
                     <li class="profile_link_lg">
                         <span class="fa-li">
@@ -70,9 +76,34 @@
                         <a href="#">I Need Help</a>
                     </li>
                 </ul>
-              </div>
-              <!-- Links -->
             </div>
-            <div class="col-lg-8"></div>
         </div>
+        <div class="col-12 col-lg-9">
+            <div class="profile_header">
+                <h2 class="primary_font white_font text-center">Hello Username</h2>
+            </div>
+            <div class="feelings_prompt_wrapper">
+                <p class="secondary_font white_font text-center">
+                    How do you feel today?
+                </p>
+                <div class="feelings_input d-flex flex-column align-items-center">
+                    <input type="text" id="feelings_input" class="form-control profile_input w-50 secondary_font">
+                    <button type="button" class="btn feelings_btn white_font mt-3 w-50 secondary_font" id="feelings_submit">Submit</button>
+                </div>
+                <div id="feelings_response_wrapper">
+                    <p class="secondary_font white_font mt-3 text-center" id="feelings_response">
+                        
+                    </p>
+                    <p class="secondary_font white_font mt-3 text-center" id="error_response">
+                        Please let us know how you're feeling.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block postload_js %}
+    {{ block.super }}
+    <script src="{% static 'js/emotional_input.js' %}"></script>
 {% endblock %}

@@ -9,13 +9,29 @@ ul {
     list-style-type: none;
 }
 
+.profile_image_wrapper_sm {
+     padding: 1rem;
+     display: flex;
+     justify-content: space-between;
+}
+
+.profile_username_sm {
+    color: #ff6450;
+}
+
+.feelings_btn {
+    background-color: #ff6450;
+}
+
+.anonymous_checkbox {
+    display: inline;
+}
+
 /* Profile Image and Links SM */
 .profile_image_sm {
-    margin: 1rem 1rem 1rem 0;
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    float: right;
 }
 
 .profile_links_sm {
@@ -29,6 +45,14 @@ ul {
 .link_icon_sm {
      color: #fafafa;
 }
+
+#feelings_response_wrapper {
+    display: none;
+}
+
+/* #error_response {
+    display: none;
+} */
  
 /* Start of larger screens */
 @media screen and (min-width: 992px) {
@@ -42,15 +66,19 @@ ul {
 
     .sidebar_lg {
         background-color: #141414;
-        width: 300px;
+        /* width: 300px; */
+    }
+
+    .profile_username_lg {
+        color: #ff6450;
     }
 
     /* Profile SideBar */
 
     .profile_image_wrapper_lg {
-        margin-right: 1rem;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
+        padding: 1rem 1rem 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
     }
 
     .profile_image_lg {
