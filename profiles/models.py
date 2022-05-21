@@ -39,4 +39,3 @@ def create_or_update_user(sender, instance, created, **kwargs):
 
     # Otherwise, save the profile.
     instance.userprofile.save()
-
