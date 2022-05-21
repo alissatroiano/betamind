@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if formset %}
+<form action="{{ url_for('select_mood') }}" method="post">
+    {{ formset.hidden_tag() }}
+    {{ formset.non_form_errors() }}
+    {% for form in formset %}
+        <div class="form-group">
+            <label for="{{ form.id }}">{{ form.label }}</label>
+            {{ form.errors }}
+            {{ form.select }}
+        </div>
+    {% endfor %}
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% else %}
+<p>No forms to display</p>
+{% endif %}
+
+{% endblock %}
