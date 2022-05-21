@@ -4,6 +4,7 @@ from django.urls import reverse
 from django.forms.models import modelformset_factory
 from .models import Mood, Post, Comment
 from .forms import PostForm
+from django.contrib import messages
 from profiles.models import UserProfile
 from django.contrib.auth import get_user_model
 
@@ -32,7 +33,11 @@ def blog(request):
             form = post_form.save(commit=False)
             form.post_sender = current_user
             form.save()
+            print("FORM VALID")
+            messages.success(request, "Thanks for sharing with us.")
             return redirect(reverse("blog"))
+        else:
+            print("FORM INVALID", post_form.errors)
 
     posts = Post.objects.all()
     moods = Mood.objects.all()
