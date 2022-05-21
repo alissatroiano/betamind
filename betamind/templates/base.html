@@ -46,7 +46,7 @@
                             </li>
                                 {% if request.user.is_authenticated %}
                                     <li class="nav-item">
-                                        <a class="nav-link secondary_font light_font medium_text white_font" href="{% url 'home' %}">Dashboard</a>
+                                        <a class="nav-link secondary_font light_font medium_text white_font" href="{% url 'profile' request.user %}">Dashboard</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link secondary_font light_font medium_text white_font" href="{% url 'blog' %}">Blog</a>
