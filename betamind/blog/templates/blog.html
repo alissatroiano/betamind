@@ -42,7 +42,7 @@
                         <div class="accordion-collapse show" id="filter_dropdown" aria-labelledby="accordion_header" data-bs-parent="#filter_accordion">
                             <div class="accordion-body">
                                 {% for mood in moods %}
-                                    <span class="badge mood_badge_select rounded-pill"><a href="#" class="no_underline secondary_font white_font small_text medium_light_font">{{mood.name}}</a></span>
+                                    <span class="badge mood_badge_select rounded-pill"><a href="{% url 'blog' %}?mood_name={{mood}}" class="no_underline secondary_font white_font small_text medium_light_font">{{mood.name}}</a></span>
                                 {% endfor %}
                             </div>
                         </div>
@@ -52,24 +52,31 @@
             </div>
             <div class="col-12 col-lg-9 h-100">
                 <div class="row g-4 mt-3 h-100">
-                {% for post in posts %}
-                    <div class="col-12 my-3">
-                        <div class="card h-100 blog_card {% if forloop.counter|divisibleby:2 %}second{% endif%}">
-                            <div class="card-body blog_card">
-                                 {% if forloop.counter|divisibleby:2%}
-                            <p>HELLO</p>
-                        {% endif %}
-                                <span class="badge rounded-pill mood_badge secondary_font">{{post.mood}}</span>
-                                <h5 class="card-title">{{ post.title }}</h5>
-                                <p class="card-text">{{ post.content }}</p>
-                            </div>
-                            <div class="card-footer">
-                                <p>{{ post.post_sender }} </p>
-                                <small class="text-muted">{{ post.created_at }}</small>
+                {% if posts %}
+                    {% for post in posts %}
+                        <div class="col-12 my-3">
+                            <div class="card h-100 blog_card {% if forloop.counter|divisibleby:2 %}second{% endif%}">
+                                <div class="card-body blog_card">
+                                    <span class="badge rounded-pill mood_badge secondary_font">{{post.mood}}</span>
+                                    <h5 class="card-title secondary_font">{{ post.title }}</h5>
+                                    <p class="card-text secondary_font">{{ post.content }}</p>
+                                </div>
+                                <div class="card-footer">
+                                    {% if post.post_sender.user_profile.profile_image %}
+                                        <img src="{{MEDIA_URL}}post.post_sender.user_profile.profile_image" alt="post.post_sender" class="blog_card_image" width="50" height="50">
+                                    {% else %}
+                                        <img src="{{MEDIA_URL}}default_profile_image.webp" alt="post.post_sender" class="blog_card_image" width="50" height="50">
+                                    {% endif %}
+                                    <p class="post_sender secondary_font">{{ post.post_sender }} </p>
+                                    <small class="text-muted post_created secondary_font">{{ post.created_at }}</small>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                {% endfor %}
+                    {% endfor %}
+                {% else %}
+                <h4 class="text-center secondary_font medium_text white_font light_font">No Posts</h4>
+                {% endif %}
+                
                 </div>
             </div>
         </div>

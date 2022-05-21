@@ -39,7 +39,12 @@ def blog(request):
         else:
             print("FORM INVALID", post_form.errors)
 
-    posts = Post.objects.all()
+    posts = None
+    if "mood_name" in request.GET:
+        query_param = request.GET.get("mood_name")
+        posts = Post.objects.filter(mood__name=query_param)
+    else:
+        posts = Post.objects.all()
     moods = Mood.objects.all()
 
     post_form = PostForm()
