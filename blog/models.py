@@ -2,8 +2,6 @@ from django.db import models
 from django.conf import settings
 
 from django.contrib.auth.models import User
-import uuid
-
 from django.utils import timezone
 
 from datetime import datetime
@@ -15,37 +13,33 @@ STATUS = (
 )
 
 MOOD = (
-    (0, "Happy"),
-    (1, "Sad"),
-    (2, "Angry"),
-    (3, "Surprised"),
-    (4, "Scared"),
-    (5, "Disgusted"),
-    (6, "Anxious"),
-    (7, "Bored"),
-    (8, "Tired"),
-    (9, "Depressed"),
-    (10, "Frustrated"),
+    ("Happy", "Happy"),
+    ("Sad", "Sad"),
+    ("Angry", "Angry"),
+    ("Surprised", "Surprised"),
+    ("Scared", "Scared"),
+    ("Disgusted", "Disgusted"),
+    ("Anxious", "Anxious"),
+    ("Bored", "Bored"),
+    ("Tired", "Tired"),
+    ("Depressed", "Depressed"),
+    ("Frustrated", "Frustrated"),
 )
 
 class Mood(models.Model): 
     """
     Moods to categorize different types of blog posts
     """
-    mood = models.IntegerField(choices=MOOD, default=0)
-    unique_id = models.UUIDField(default=uuid.uuid4, max_length=100, unique=True, primary_key=True)
-    slug = models.SlugField(max_length=40, unique=True) 
-    is_public = models.BooleanField(default=False)
+    class Meta:
+        verbose_name = "Mood"
+        verbose_name_plural = "Moods"
+
+    name = models.CharField(max_length=200, unique=True)
+    mood = models.CharField(choices=MOOD, max_length=254, default="Happy")
+    slug = models.SlugField(max_length=200, unique=True)
 
     def __str__(self):
-        return str(self.mood)
-
-    def get_friendly_name(self):
-        return self.friendly_name
-
-    def get_absolute_url(self):
-        # return reverse('article-detail', args=(str(self.id)))
-        return "/mood/%s/" % self.slug
+        return self.mood
 
 
 class Post(models.Model):
@@ -57,6 +51,11 @@ class Post(models.Model):
     content = models.TextField(null=True, blank=True)
     is_public = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    deleted_at = models.DateTimeField(auto_now=True)
+    image_url = models.URLField(max_length=1024, null=True, blank=True)
+    image = models.ImageField(null=True, blank=True, )
+    is_public = models.BooleanField(default=False)
 
     class Meta:
         verbose_name_plural = "Posts"
@@ -70,16 +69,16 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
-    comment_sender = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.CASCADE,related_name='comment_sender')
-    post = models.ForeignKey(Post, on_delete= models.CASCADE,related_name='blog_post')
+    comment_sender = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.CASCADE)
+    post = models.ForeignKey(Post, on_delete= models.CASCADE)
     comment = models.TextField(null=True, blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now_add=True)
-    deleted_at = models.DateTimeField(blank=True, null=True)
+    create_post = models.DateTimeField(auto_now_add=True)
+    edit_post = models.DateTimeField(auto_now_add=True)
+    delete_post = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name_plural = "Comments"
-        ordering = ['-created_at']
+        ordering = ['-create_post']
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
