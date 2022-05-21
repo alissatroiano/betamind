@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static "css/profile.css" %}">
+{% endblock %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+    <div id="profile_breadcrumb_wrapper_sm">
+        <nav aria-label="breadcrumb">
+            <!-- Nav Breadcrumb Links for Mobile Only -->
+            <ul class="d-flex justify-content-center d-lg-none dashboard_nav_mobile">
+                <li class="profile_link_sm">
+                    <a href="#"><i class="fas fa-circle-plus"></i></a>
+                </li>
+                <li class="profile_link_sm">
+                    <a href="#"><i class="fa-solid fa-rss"></i></a>
+                </li>
+                <li class="profile_link_sm">
+                    <a href="#"><i class="fa-solid fa-circle-exclamation"></i></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+{% endblock %}
