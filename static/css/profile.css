@@ -1,0 +1,115 @@
+.sidebar_sm {
+    margin-top: 2rem;
+    background-color: #141414;
+    min-height: 100px;
+    font-size: 1.5rem;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.profile_image_wrapper_sm {
+     padding: 1rem;
+     display: flex;
+     justify-content: space-between;
+}
+
+.profile_username_sm {
+    color: #ff6450;
+}
+
+.feelings_btn {
+    background-color: #ff6450;
+}
+
+.anonymous_checkbox {
+    display: inline;
+}
+
+/* Profile Image and Links SM */
+.profile_image_sm {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.profile_links_sm {
+    clear: both;
+}
+
+.profile_link_sm {
+    margin: 1rem 2rem;
+}
+
+.link_icon_sm {
+     color: #fafafa;
+}
+
+#feelings_response_wrapper {
+    display: none;
+}
+
+/* #error_response {
+    display: none;
+} */
+ 
+/* Start of larger screens */
+@media screen and (min-width: 992px) {
+
+    .profile_block_divider_lg {
+        clear: both;
+        display: block;
+        border: 1px solid rgb(230, 230, 230);
+        opacity: 1;
+    }
+
+    .sidebar_lg {
+        background-color: #141414;
+        /* width: 300px; */
+    }
+
+    .profile_username_lg {
+        color: #ff6450;
+    }
+
+    /* Profile SideBar */
+
+    .profile_image_wrapper_lg {
+        padding: 1rem 1rem 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .profile_image_lg {
+        float: right;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        margin-bottom: 1rem;
+    }
+
+    /* Sidebar Links */
+
+    .links_container_lg {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .link_icon_lg {
+        color: white;
+        font-size: 1.5rem;
+    }
+
+    .profile_link_lg {
+        margin: 2rem 0;
+        font-family: "Montserrat", sans-serif;
+    }
+
+    .profile_link_lg a {
+        color: #fafafa;
+        text-decoration: none;
+    }
+ 
+}

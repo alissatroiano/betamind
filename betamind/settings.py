@@ -27,7 +27,11 @@ SECRET_KEY = 'django-insecure-z-&c%)_=$3mm%@t7lyj4+@0@rz4i0^jdfc=&n!6cm4!@gko!1l
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-# CSRF_TRUSTED_ORIGINS = ['https://8000-olivercadman-betamind-ugu21viax73.ws-eu45.gitpod.io/']
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-olivercadman-betamind-ugu21viax73.ws-eu45.gitpod.io/',
+    'https://8000-olivercadman-betamind-gelogwtvv8g.ws-us45.gitpod.io',
+    'https://olivercadman-betamind-gelogwtvv8g.ws-eu45.gitpod.io'
+    ]
 
 
 # Application definition
@@ -67,6 +71,24 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+SITE_ID = 1
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+ACCOUNT_AUTHENTICATION_METHOD = 'username'
+ACCOUNT_EMAIL_REQUIRED = False
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+ACCOUNT_USERNAME_MIN_LENGTH = 4
+LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/accounts/login/'
 
 ROOT_URLCONF = 'betamind.urls'
 
@@ -141,6 +163,8 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+LOGIN_REDIRECT_URL = "/"
 
 
 # Static files (CSS, JavaScript, Images)

@@ -9,8 +9,8 @@ body {
     display: flex;
     flex-direction: column;
     /* Test Background as I couldn't stand the harsh white */
-    background: rgb(58, 48, 217);
-    background: linear-gradient(90deg, rgba(58, 48, 217, 1) 1%, rgba(75, 34, 149, 1) 99%);
+    background: rgb(198, 195, 238);
+    background: linear-gradient(90deg, rgb(220, 219, 235) 1%, rgb(182, 149, 242) 99%);
 }
 
 /* Utility Classes */
@@ -64,6 +64,12 @@ body {
 /* Blog */
 .card {
 
+}
+
+/* Landing Page */
+
+.img-fluid {
+    
 }
 
 /* Footer */
