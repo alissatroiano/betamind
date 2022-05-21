@@ -28,58 +28,50 @@ MOOD = (
     (10, "Frustrated"),
 )
 
-class Category(models.Model):
-
-    class Meta: 
-        verbose_name_plural = "Categories" 
-
-    name = models.CharField(max_length=255)
+class Mood(models.Model): 
+    """
+    Moods to categorize different types of blog posts
+    """
+    mood = models.IntegerField(choices=MOOD, default=0)
+    unique_id = models.UUIDField(default=uuid.uuid4, max_length=100, unique=True, primary_key=True)
     slug = models.SlugField(max_length=40, unique=True) 
-    friendly_name = models.CharField(max_length=254, null=True, blank=True)
-    parent = models.ForeignKey('self',blank=True, null=True, on_delete=models.SET_NULL, related_name='children')
-    
+    is_public = models.BooleanField(default=False)
+
     def __str__(self):
-        return (self.name)
+        return str(self.mood)
 
     def get_friendly_name(self):
         return self.friendly_name
 
     def get_absolute_url(self):
         # return reverse('article-detail', args=(str(self.id)))
-        return "/categories/%s/" % self.slug
+        return "/mood/%s/" % self.slug
 
 
 class Post(models.Model):
     title = models.CharField(max_length=254, unique=True)
     slug = models.SlugField(max_length=40, unique=True)
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.CASCADE,related_name='blog_posts')
-    category = models.ForeignKey(
-        'Category', null=True, blank=True, on_delete=models.SET_NULL)
-    date = models.DateTimeField(auto_now_add=True)
-    content = models.TextField()
-    created_on = models.DateTimeField(auto_now_add=True)
-    updated_on = models.DateTimeField(auto_now_add=True)
-    deleted_on = models.DateTimeField(blank=True, null=True)
-    status = models.CharField(max_length=40, choices=STATUS, default=0)
-    mood = models.CharField(max_length=254, choices=MOOD, default=0)
-    image_url = models.URLField(max_length=1024, null=True, blank=True)
-    image = models.ImageField(null=True, blank=True, )
+    post_sender = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.CASCADE)
+    mood = models.ForeignKey(
+        'Mood', null=True, blank=True, on_delete=models.SET_NULL)
+    content = models.TextField(null=True, blank=True)
     is_public = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name_plural = "Posts"
-        ordering = ['-created_on']
+        ordering = ['-created_at']
 
     def __str__(self):
         return self.title
 
     def get_absolute_url(self):
-        return "/%s/%s/%s/" % (self.pub_date.year, self.pub_date.month, self.slug)
+        return "/%s/%s/%s/" % (self.created_at.year, self.created_at.month, self.slug)
 
 
 class Comment(models.Model):
-    comment_sender = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.CASCADE,related_name='blog_comments')
-    post = models.ForeignKey(Post, on_delete= models.CASCADE,related_name='blog_comments')
+    comment_sender = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.CASCADE,related_name='comment_sender')
+    post = models.ForeignKey(Post, on_delete= models.CASCADE,related_name='blog_post')
     comment = models.TextField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
