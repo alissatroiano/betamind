@@ -27,13 +27,10 @@ SECRET_KEY = 'django-insecure-z-&c%)_=$3mm%@t7lyj4+@0@rz4i0^jdfc=&n!6cm4!@gko!1l
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-# CSRF_TRUSTED_ORIGINS = ['https://8000-olivercadman-betamind-ugu21viax73.ws-eu45.gitpod.io/']
-
 
 # Application definition
 
 INSTALLED_APPS = [
-    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -58,6 +55,24 @@ INSTALLED_APPS = [
 
 ]
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+SITE_ID = 1
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+ACCOUNT_AUTHENTICATION_METHOD = 'username'
+ACCOUNT_EMAIL_REQUIRED = False
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+ACCOUNT_USERNAME_MIN_LENGTH = 4
+LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/accounts/login/'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -70,7 +85,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'betamind.urls'
 
-# CSRF_TRUSTED_ORIGINS = ['https://olivercadman-betamind-ugu21viax73.ws-eu45.gitpod.io/']
+CSRF_TRUSTED_ORIGINS = ['https://8000-olivercadman-betamind-gelogwtvv8g.ws-us45.gitpod.io']
 
 TEMPLATES = [
     {
@@ -88,7 +103,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media'
             ],
-              'builtins': [
+            'builtins': [
                 'crispy_forms.templatetags.crispy_forms_tags',
                 'crispy_forms.templatetags.crispy_forms_field',
             ],
