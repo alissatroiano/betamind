@@ -15,22 +15,28 @@ from .models import Mood, Post, Comment
 #         }
 
 class PostForm(forms.ModelForm):
+    title = forms.CharField(
+        label = 'Post Title',
+        widget=forms.TextInput(attrs={
+            'class': 'form-control'
+            }))
+
     content = forms.CharField(
         required=False,
         widget=forms.Textarea(attrs={
-            'rows':2,
+            'rows': 6,
             'width':'100%',
             'class': 'form-control',
             'placeholder': 'Enter Image/YouTube Video Url or a text quote'}))
 
     class Meta:
         model = Post
-        fields = ['title', 'content', 'mood', 'slug']
+        fields = ['title', 'post_sender',  'mood', 'content']
         labels = {
             'title': 'Title',
-            'content': 'Content',
+            'post_sender': 'Author',
             'mood': 'Mood',
-            'slug': 'Slug',
+            'content': 'Content',
         }
         widgets = {
             'mood': forms.Select(attrs={'class': 'form-control'}),
