@@ -3,16 +3,9 @@
 html,
 body {
     height: 100%;
+    background-image: linear-gradient(to right, #141e30, #243b55);
 }
-
-body {
-    display: flex;
-    flex-direction: column;
-    /* Test Background as I couldn't stand the harsh white */
-    background: rgb(198, 195, 238);
-    background: linear-gradient(90deg, rgb(220, 219, 235) 1%, rgb(182, 149, 242) 99%);
-}
-
+/* background: linear-gradient(90deg, rgba(192,231,239,1) 0%, rgba(211,236,241,1) 6%, rgba(228,251,255,1) 13%, rgba(244,254,255,1) 20%, rgba(249,255,255,1) 31%, rgba(249,255,255,1) 47%, rgba(244,254,255,1) 63%, rgba(236,251,254,1) 80%, rgba(211,236,241,1) 93%, rgba(192,231,239,1) 100%); */
 /* Utility Classes */
 
 .primary_font {
@@ -60,17 +53,53 @@ body {
     justify-content: center;
 }
 
+/*----------------- Blog -----------------*/
+.card {}
 
-/* Blog */
-.card {
+/*----------------- Team -----------------*/
+h1 {
+    font-size: 36px;
+    color: #fafafa;
+    font-weight: bold;
+}
 
+h3 {
+    font-size: 24px;
+    color: #555;
+    font-weight: bold;
+}
+
+.card.h-100.shadow-lg.border-0 {
+    margin: 40px;
+}
+
+#team i {
+    font-size: 26px;
+    color: #555;
+}
+
+#team p {
+    font-weight: 500;
+}
+
+#team .card {
+    border-radius: 10px;
+    transition: all 0.3s ease-in;
+    filter: opacity(0.67);
+}
+
+#team .card:hover {
+    background-color: #fafafaf0;
+    color: #141e30;
+    filter: opacity(1);
+       /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    /* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7abcff', endColorstr='#4044a5', GradientType=0); */
+    /* IE6-9 */
 }
 
 /* Landing Page */
 
-.img-fluid {
-    
-}
+.img-fluid {}
 
 /* Footer */
 
@@ -104,8 +133,7 @@ footer .row:nth-child(3) {
     margin-top: 2rem;
 }
 
-
-     
+/*----------------- Media Queries -----------------*/
 
 /* Tablet Devices */
 @media screen and (min-width: 768px) {
@@ -155,6 +183,9 @@ footer .row:nth-child(3) {
         width: 80px;
         height: 80px;
     }
+    .card.h-100.shadow-lg.border-0 {
+        margin: 0 auto;
+    }
 }
 
 /* Start of Larger Screens */
@@ -184,6 +215,5 @@ footer .row:nth-child(3) {
         opacity: 1;
         transform: translate3d(0, 0.1em, 0);
 
-}
-
+    }
 }
