@@ -1,7 +1,34 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <h1>HEY</h1>
-    {{ blog.posts }}
+<section class="blog">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center display-1 my-3 text-light">BetaMind Board</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row g-4 mt-3">
+            {% for post in posts %}
+			<div class="col-sm-12 col-md-4 my-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ post.title }}</h5>
+                        <p class="card-text">{{ post.content }}</p>
+                    </div>
+                    <div class="card-footer">
+                        <p>{{ post.post_sender }} </p>
+                        <small class="text-muted">{{ post.created_at }}</small>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+</div>
+</section>
 
 {% endblock %}

@@ -22,7 +22,7 @@ def blog(request):
     posts = Post.objects.all()
     moods = Mood.objects.all()
 
-    return render(request, 'blog.html')
+    return render(request, 'blog.html', {'posts': posts, 'moods': moods})
 
 
 # @login_required
