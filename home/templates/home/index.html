@@ -1,7 +1,26 @@
-{% extends "base.html" %}
-
+{% extends 'base.html'%}
+{% load static %}
 {% block title %}BetaMind{% endblock %}
-<h1>hello</h1>
+
 
 {% block content %}
+<!-- homepage -->
+
+<section class="hero-container h-100">
+    <div class="container-fluid img-wrapper">
+        <img src="{% static "media/bg1.jpeg" %}" alt="bg-image" class="img-fluid">
+    </div>
+    <div class="banner">
+        <h1>BetaMinds</h1>
+        <p>"Friends when you need them!."</p>
+        <div class="buttons">
+            <a class="btn-home" href="{% url 'account_login' %}">Login</a>
+            <a class="btn-home" href="{% url 'account_signup' %}">Register</a>
+            
+        </div>
+    </div>
+    </div>
+</section>
+        <!--  end of section homepage /-->
+
 {% endblock %}
