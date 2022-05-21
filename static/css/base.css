@@ -1,5 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@300;400;500&family=Work+Sans:wght@300;400&display=swap');
 
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+/*---------------[ COLOR ]-----------------*/
+
+:root {
+    
+    --grey: #E5E5E5;
+    --orange: #F2A557;
+    --darkgrey: #5f5f61;
+    --ivory: #c2c2c2;
+    --red: #B30730;
+    --blue: rgb(58,48,217);
+    --black: #0D0000;
+    --white: #ffffff;
+    --light: #fafafa;
+    --gradient: linear-gradient(90deg, rgba(58, 48, 217, 1) 1%, rgba(75, 34, 149, 1) 99%);
+
+    --primary-font: "Lobster", sans-serif;
+    --secondary-font:"Montserrat", sans-serif;
+}
+
 html,
 body {
     height: 100%;
@@ -9,22 +36,15 @@ body {
     display: flex;
     flex-direction: column;
     /* Test Background as I couldn't stand the harsh white */
-    background: rgb(58, 48, 217);
-    background: linear-gradient(90deg, rgba(58, 48, 217, 1) 1%, rgba(75, 34, 149, 1) 99%);
+    background:var(--blue);
+    background: var(--gradient);
 }
 
 /* Utility Classes */
 
-.primary_font {
-    font-family: "Lobster", sans-serif;
-}
-
-.secondary_font {
-    font-family: "Montserrat", sans-serif;
-}
 
 .white_font {
-    color: #fafafa;
+    color: var(--light);
 }
 
 .light_font {
@@ -134,7 +154,7 @@ footer .row:nth-child(3) {
     .nav-link,
     .nav-link:hover {
         margin: 0 1.5rem;
-        color: white
+        color: var(--white);
     }
 
     /* Footer */
