@@ -8,10 +8,16 @@ body {
 body {
     display: flex;
     flex-direction: column;
-    /* Test Background as I couldn't stand the harsh white */
+    /* Test Background as I couldn't stand the harsh white
     background: rgb(198, 195, 238);
-    background: linear-gradient(90deg, rgb(220, 219, 235) 1%, rgb(182, 149, 242) 99%);
-}
+    background-image: linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%);
+ */
+  background: 
+    repeating-radial-gradient(
+      circle at 0 0, 
+   #1e3c72 , #142a50 5px
+    );
+ }
 
 /* Utility Classes */
 
@@ -58,6 +64,133 @@ body {
 .centered {
     display: flex;
     justify-content: center;
+}
+/* --------------------------------team page ------------------------ */
+
+    .team-header {
+            font-size: 36px;
+            color: #fafafa;
+            font-weight: bold;
+        }
+
+        h3 {
+            font-size: 24px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        
+        #team i {
+            font-size: 26px;
+            color: #555;
+        }
+
+        #team p {
+            font-weight: 500;
+        }
+
+        #team .card {
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgb(58, 48, 217);
+            transition: all 0.3s ease-in;
+            -webkit-transition: all 0.3s ease-in;
+            -moz-transition: all 0.3s ease-in;
+        }
+
+        #team .card:hover {
+            color: #fff;
+             background:rgba(255,255,255,0.1);
+             /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#7abcff+-1,60abf8+0,60abf8+0,7abcff+0,60abf8+2,7abcff+3,7abcff+6,7abcff+6,60abf8+8,60abf8+11,7abcff+12,7abcff+12,60abf8+12,60abf8+12,60abf8+13,7abcff+14,60abf8+14,60abf8+14,7abcff+18,7abcff+18,60abf8+18,60abf8+21,60abf8+21,60abf8+22,60abf8+22,60abf8+25,60abf8+25,60abf8+27,60abf8+27,7abcff+28,60abf8+28,60abf8+28,60abf8+30,60abf8+30,60abf8+31,60abf8+31,60abf8+33,60abf8+33,60abf8+33,60abf8+33,4044a5+86,4044a5+86,4044a5+99 */
+             background: #7abcff; /* Old browsers */
+             background: -moz-linear-gradient(top,  #97c6f5 -1%, #9dcaf7 0%, #a3caf1 0%, #c5ddf5 0%, #cce4fc 2%, #c9e0f7 3%, #c5daf0 6%, #b6d5f5 6%, #fff 8%, #b5d9fd 11%, #7abcff 12%, #7abcff 12%, #60abf8 12%, #60abf8 12%, #60abf8 13%, #7abcff 14%, #60abf8 14%, #60abf8 14%, #7abcff 18%, #7abcff 18%, #60abf8 18%, #60abf8 21%, #60abf8 21%, #60abf8 22%, #60abf8 22%, #60abf8 25%, #60abf8 25%, #60abf8 27%, #60abf8 27%, #7abcff 28%, #60abf8 28%, #60abf8 28%, #60abf8 30%, #60abf8 30%, #60abf8 31%, #60abf8 31%, #60abf8 33%, #60abf8 33%, #60abf8 33%, #60abf8 33%, #4044a5 86%, #4044a5 86%, #4044a5 99%); /* FF3.6-15 */
+             background: -webkit-linear-gradient(top,  #7abcff -1%,#60abf8 0%,#60abf8 0%,#7abcff 0%,#60abf8 2%,#7abcff 3%,#7abcff 6%,#7abcff 6%,#60abf8 8%,#60abf8 11%,#7abcff 12%,#7abcff 12%,#60abf8 12%,#60abf8 12%,#60abf8 13%,#7abcff 14%,#60abf8 14%,#60abf8 14%,#7abcff 18%,#7abcff 18%,#60abf8 18%,#60abf8 21%,#60abf8 21%,#60abf8 22%,#60abf8 22%,#60abf8 25%,#60abf8 25%,#60abf8 27%,#60abf8 27%,#7abcff 28%,#60abf8 28%,#60abf8 28%,#60abf8 30%,#60abf8 30%,#60abf8 31%,#60abf8 31%,#60abf8 33%,#60abf8 33%,#60abf8 33%,#60abf8 33%,#4044a5 86%,#4044a5 86%,#4044a5 99%); /* Chrome10-25,Safari5.1-6 */
+             background: linear-gradient(to bottom,  #7abcff -1%,#60abf8 0%,#60abf8 0%,#7abcff 0%,#60abf8 2%,#7abcff 3%,#7abcff 6%,#7abcff 6%,#60abf8 8%,#60abf8 11%,#7abcff 12%,#7abcff 12%,#60abf8 12%,#60abf8 12%,#60abf8 13%,#7abcff 14%,#60abf8 14%,#60abf8 14%,#7abcff 18%,#7abcff 18%,#60abf8 18%,#60abf8 21%,#60abf8 21%,#60abf8 22%,#60abf8 22%,#60abf8 25%,#60abf8 25%,#60abf8 27%,#60abf8 27%,#7abcff 28%,#60abf8 28%,#60abf8 28%,#60abf8 30%,#60abf8 30%,#60abf8 31%,#60abf8 31%,#60abf8 33%,#60abf8 33%,#60abf8 33%,#60abf8 33%,#4044a5 86%,#4044a5 86%,#4044a5 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7abcff', endColorstr='#4044a5',GradientType=0 ); /* IE6-9 */
+
+        }
+
+        #team .card:hover h3,
+        #team .card:hover i {
+            color: #fff;
+        }
+/*-------------------  help modals---------------------------- */
+.modal {
+    top: 15% !important;
+    max-height: 90%;
+}
+
+.articles-list {
+  display: flex;
+  justify-content: space-between;
+}
+.articles-items {
+  width: calc(25% - 15px);
+}
+.articles-items img {
+  max-width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+.articles-content {
+  margin-top: 12px;
+}
+.articles-content p {
+  line-height: 1.4;
+  padding: 15px 0;
+}
+.articles-content .btn {
+  display: inline-block;
+  outline: none;
+  border: none;
+  padding: 10px 20px;
+  background-color: #00bed8;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16.8px;
+  transition: all 0.2s ease-in;
+}
+.articles-content .btn:hover {
+  background-color: #15def8;
+}
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.modal-content {
+  max-width: 550px;
+  height: 420px;
+  padding: 20px;
+  line-height: 1.5;
+  background-color: #fff;
+  border-radius: 14px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-16rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.modal-close {
+  position: absolute;
+  top: 5rem;
+  left: 8rem;
+  max-width: 68px;
+  color: #00bcd4;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+.modal-close:hover {
+  color: #11a5b9;
 }
 
 

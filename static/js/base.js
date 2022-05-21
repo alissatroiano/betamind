@@ -1,0 +1,2 @@
+// help modal
+ $(".modal").modal();
