@@ -31,12 +31,13 @@ class PostForm(forms.ModelForm):
 
     class Meta:
         model = Post
-        fields = ['title', 'post_sender',  'mood', 'content']
+        fields = ['title', 'slug', 'post_sender',  'mood', 'content']
         labels = {
             'title': 'Title',
             'post_sender': 'Author',
             'mood': 'Mood',
             'content': 'Content',
+            'slug': 'Description',
         }
         widgets = {
             'mood': forms.Select(attrs={'class': 'form-control'}),

@@ -29,8 +29,7 @@ def create_post(request):
         form = PostForm(request.POST)
         if form.is_valid():
             post = form.save()
-            return Post.objects.create(post=post, user=request.user)
-            return redirect(reverse('blog'))
+            return redirect(reverse('blog'))    
         else:
             print(form.errors)
             return render(request, 'create_post.html', {'form': form})
