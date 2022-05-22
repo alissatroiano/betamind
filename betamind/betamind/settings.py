@@ -141,7 +141,7 @@ WSGI_APPLICATION = 'betamind.wsgi.application'
 
 if "DATABASE_URL" in os.environ:
     DATABASES = {
-        'default': dj_database_url.parse("postgres://ocixthmfmtozyf:659be997a068d70ea9bd6627bcc2fe842db05eb9aa5d1392e85b8305535ca6b9@ec2-52-212-228-71.eu-west-1.compute.amazonaws.com:5432/d2g9bu7mhtfgme")
+        'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
     }
 
 else:
@@ -225,9 +225,9 @@ if "USE_AWS" in os.environ:
 
 
 if "DEVELOPMENT" in os.environ:
-    DEBUG = False
+    DEBUG = True
 else:
-    DEBUG = True    
+    DEBUG = False    
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
