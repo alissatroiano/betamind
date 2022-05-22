@@ -14,7 +14,7 @@ class UserProfile(models.Model):
         profile_image (ImageField) - Profile image for user.
     """
 
-    auth_user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    auth_user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="user_profile")
     alias = models.CharField(max_length=100, null=True, blank=True)
     is_anonymous = models.BooleanField(default=False)
     profile_image = models.ImageField(upload_to="uploads", null=True, blank=True)
