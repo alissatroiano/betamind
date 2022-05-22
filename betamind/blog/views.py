@@ -5,16 +5,6 @@ from .models import Mood, Post, Comment
 from .forms import PostForm
 from django.contrib.auth import get_user_model
 
-
-# @login_required
-# def select_mood(request):
-#     """
-#     Select mood to create a post
-#     """
-#     mood_form = MoodForm()
-#     return render(request, 'blog/select_mood.html', {'mood_form': mood_form})
-
-
 @login_required
 def blog(request):
     """
