@@ -38,5 +38,5 @@ def create_or_update_user(sender, instance, created, **kwargs):
         print(UserProfile.objects.get(auth_user=instance))
 
     # Otherwise, save the profile.
-    instance.userprofile.save()
+    instance.user_profile.save()
 
