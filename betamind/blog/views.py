@@ -1,12 +1,8 @@
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
-from django.shortcuts import get_object_or_404, render, redirect
-from django.urls import reverse
-from django.forms.models import modelformset_factory
+from django.shortcuts import render
 from .models import Mood, Post, Comment
 from .forms import PostForm
-from django.contrib import messages
-from profiles.models import UserProfile
 from django.contrib.auth import get_user_model
 
 
