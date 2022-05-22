@@ -1,1 +1,1 @@
-web: gunicorn betamind.wsgi:application
+web: gunicorn --chdir betamind betamind.wsgi -b 0.0.0.0:$PORT
