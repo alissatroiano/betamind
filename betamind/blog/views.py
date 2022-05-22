@@ -1,4 +1,5 @@
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, render, redirect
 from django.urls import reverse
 from django.forms.models import modelformset_factory
@@ -33,11 +34,10 @@ def blog(request):
             form = post_form.save(commit=False)
             form.post_sender = current_user
             form.save()
-            print("FORM VALID")
-            messages.success(request, "Thanks for sharing with us.")
-            return redirect(reverse("blog"))
+            success_msg = "Thanks for sharing with us."
+            return JsonResponse({"success_msg": success_msg})
         else:
-            print("FORM INVALID", post_form.errors)
+            return JsonResponse({"errors": post_form.errors.as_json()})
 
     posts = None
     if "mood_name" in request.GET:
