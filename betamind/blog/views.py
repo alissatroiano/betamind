@@ -37,13 +37,24 @@ def create_post(request):
 
 @login_required
 def edit_post(request, post_id):
-    post = Post.objects.get(id=post_id)
-    return render(request, 'blog/edit_post.html', {
-        'form': PostForm(instance=post),
-        'moods': Mood.objects.all(),
-        'post': post,
-    })
+    """ A view so users can edit a post """
+    if not request.user:
+        return redirect(reverse('login'))
 
+    post = get_object_or_404(Post, id=post_id)
+
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES, instance=post_id)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('blog', args=[post.pk]))
+        else:
+            print(form.errors)
+    else:
+        form = PostForm(instance=post)
+        print(form.errors)
+
+    return render(request, 'edit_post.html', {'form': form})
 
 # @login_required
 # def delete_post(request, post_id):

@@ -21,6 +21,13 @@
                     <div class="card-footer">
                         <p>{{ post.post_sender }} </p>
                         <small class="text-muted">{{ post.created_at }}</small>
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <small class="ml-3">
+                                    <a href="{% url 'edit_post' post.id %}">Edit</a> | 
+                                </small>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
