@@ -25,7 +25,7 @@ class Mood(models.Model):
 
 class Post(models.Model):
     title = models.CharField(max_length=254)
-    post_sender = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.CASCADE)
+    post_sender = models.ForeignKey(User, on_delete= models.CASCADE)
     mood = models.ForeignKey(
         Mood, on_delete=models.CASCADE)
     content = models.TextField(null=True, blank=True)
@@ -43,7 +43,7 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
-    comment_sender = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.CASCADE)
+    comment_sender = models.ForeignKey(User, on_delete= models.CASCADE)
     post = models.ForeignKey(Post, on_delete= models.CASCADE)
     comment = models.TextField(null=True, blank=True)
     create_post = models.DateTimeField(auto_now_add=True)

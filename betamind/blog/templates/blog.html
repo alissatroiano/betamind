@@ -42,7 +42,7 @@
                         <div class="accordion-collapse show" id="filter_dropdown" aria-labelledby="accordion_header" data-bs-parent="#filter_accordion">
                             <div class="accordion-body">
                                 {% for mood in moods %}
-                                    <span class="badge mood_badge_select rounded-pill"><a href="{% url 'blog' %}?mood_name={{mood}}" class="no_underline secondary_font white_font small_text medium_light_font">{{mood.name}}</a></span>
+                                    <span class="badge mood_badge_select rounded-pill"><a href="{% url 'blog' %}?mood_name={{mood}}" class="no_underline secondary_font white_font small_text medium_light_font">{{mood.mood}}</a></span>
                                 {% endfor %}
                             </div>
                         </div>

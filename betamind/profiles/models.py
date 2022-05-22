@@ -1,7 +1,7 @@
 from django.db import models
 from django.dispatch import receiver
 from django.db.models.signals import post_save
-from django.conf import settings
+from django.contrib.auth.models import User
 
 
 class UserProfile(models.Model):
@@ -14,7 +14,7 @@ class UserProfile(models.Model):
         profile_image (ImageField) - Profile image for user.
     """
 
-    auth_user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="user_profile")
+    auth_user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="user_profile")
     alias = models.CharField(max_length=100, null=True, blank=True)
     is_anonymous = models.BooleanField(default=False)
     profile_image = models.ImageField(upload_to="uploads", null=True, blank=True)
@@ -27,7 +27,7 @@ class UserProfile(models.Model):
             return "Default Alias"
 
 
-@receiver(post_save, sender=settings.AUTH_USER_MODEL)
+@receiver(post_save, sender=User)
 def create_or_update_user(sender, instance, created, **kwargs):
     """
     Create a User Profile when a user registers,

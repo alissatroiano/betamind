@@ -4,7 +4,6 @@ from django.forms.models import modelformset_factory
 from django.http import JsonResponse
 from django.shortcuts import render
 from .models import Mood, Post, Comment
-from core.models import User
 from .forms import PostForm
 from django.contrib.auth import get_user_model
 
