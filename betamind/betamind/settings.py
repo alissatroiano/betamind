@@ -238,5 +238,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'core.User'
 
 # Configure BetaMind app for Heroku
-django_heroku.setings(locals())
+django_heroku.settings(locals())
 
