@@ -141,7 +141,7 @@ WSGI_APPLICATION = 'betamind.wsgi.application'
 
 if "DATABASE_URL" in os.environ:
     DATABASES = {
-        'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+        'default': dj_database_url.parse("postgres://ocixthmfmtozyf:659be997a068d70ea9bd6627bcc2fe842db05eb9aa5d1392e85b8305535ca6b9@ec2-52-212-228-71.eu-west-1.compute.amazonaws.com:5432/d2g9bu7mhtfgme")
     }
 
 else:
@@ -193,9 +193,7 @@ LOGIN_REDIRECT_URL = "/"
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
@@ -223,10 +221,8 @@ if "USE_AWS" in os.environ:
     STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/"
     MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/"
 
-
-# Use boto3 storage in production
-if "DEVELOPMENT" in os.environ:
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
 
 if "DEVELOPMENT" in os.environ:
     DEBUG = False
