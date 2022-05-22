@@ -32,7 +32,7 @@ def blog(request):
     posts = None
     if "mood_name" in request.GET:
         query_param = request.GET.get("mood_name")
-        posts = Post.objects.filter(mood__name=query_param)
+        posts = Post.objects.filter(mood__mood=query_param)
     else:
         posts = Post.objects.all()
     moods = Mood.objects.all()
