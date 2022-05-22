@@ -1,7 +1,6 @@
 from django.db import models
 from django.conf import settings
-from django.utils.text import slugify
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from django.utils import timezone
 
 from datetime import datetime
@@ -16,40 +15,29 @@ class Mood(models.Model):
         verbose_name = "Mood"
         verbose_name_plural = "Moods"
 
-    mood = models.CharField(max_length=254, unique=True)
-    slug = models.SlugField(max_length=200, unique=True)
+    mood = models.CharField(max_length=254)
 
     def __str__(self):
         return self.mood
 
-def get_absolute_url(self):
-    return reverse('blog_index')
 
 class Post(models.Model):
     title = models.CharField(max_length=254)
     post_sender = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.CASCADE)
     mood = models.ForeignKey(
-        'Mood', null=True, blank=True, on_delete=models.SET_NULL)
+        Mood, on_delete=models.CASCADE)
     content = models.TextField(null=True, blank=True)
     is_public = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     deleted_at = models.DateTimeField(auto_now=True)
-    image_url = models.URLField(max_length=1024, null=True, blank=True)
-    image = models.ImageField(null=True, blank=True, )
-    is_public = models.BooleanField(default=False)
 
     class Meta:
         verbose_name_plural = "Posts"
-        ordering = ['-created_at']
+        ordering = ['created_at']
 
     def __str__(self):
         return self.title
-
-    def get_absolute_url(self):
-        return "/%s/%s/%s/" % (self.created_at.year, self.created_at.month, self.slug)
-
-
 
 class Comment(models.Model):
     comment_sender = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.CASCADE)
@@ -61,7 +49,7 @@ class Comment(models.Model):
 
     class Meta:
         verbose_name_plural = "Comments"
-        ordering = ['-create_post']
+        ordering = ['create_post']
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)

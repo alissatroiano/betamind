@@ -6,8 +6,8 @@ from .models import Mood, Post, Comment
 
 @admin.register(Mood)
 class MoodAdmin(admin.ModelAdmin):
-    list_display = ['mood', 'slug']
-    prepopulated_fields = {'slug': ('mood',)}
+    list_display = ['mood']
+    prepopulated_fields = {'mood': ('mood',)}
 
 
 @admin.register(Post)
