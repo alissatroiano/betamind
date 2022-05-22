@@ -18,7 +18,7 @@ class PostForm(forms.ModelForm):
         required=False,
         label="What's on your mind?",
         widget=forms.Textarea(attrs={
-            'rows':5,
+            'rows': 6,
             'width':'100%',
             'class': 'form-control',
             'placeholder': 'Please let us know.'}))
