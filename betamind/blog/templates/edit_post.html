@@ -24,12 +24,13 @@
 		<div class="col-md-8 justify-content-center">
 			<div class="card p-5 my-0 mx-auto bg-main text-light body-font">
 				<!--edit product form starts here-->
-				<form method="POST" action="{% url 'edit_post' 'post_id' %}" class="text-dark">
+				<form method="POST">
 					{% csrf_token %}
                     
 					{% for field in form %}
 					{{ field | as_crispy_field }}
-		
+					{{form.id.as_hidden}}
+
 					{% endfor %}
 					<div class="text-right">
 						<button>
