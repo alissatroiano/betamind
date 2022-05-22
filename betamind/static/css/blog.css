@@ -1,9 +1,18 @@
+.blog_header {
+    background-color: white;
+}
+
 .sidebar {
     background: transparent;
 }
 
 .sidebar_link {
     text-decoration: none;
+}
+
+.link_icon {
+    color: #fafafa;
+    margin-left: 1rem;
 }
 
 .mood_card {
@@ -70,6 +79,30 @@
     width: 100%;
 }
 
+/* Blog Cards */
+
+.blog_card_image {
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+.post_sender {
+    display: inline;
+}
+
+.card-footer {
+    position: relative;
+    min-height: 85px;
+}
+
+.post_created {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 0.3rem;
+    margin-right: 0.3rem;
+}
+
 
 
 
@@ -83,7 +116,6 @@
     }
 
     .blog_header {
-        background-color: white;
         width: 40%;
         color: #212121;
         border-radius: 0 50px 50px 0;
@@ -106,7 +138,6 @@
     }
 
     .link_icon {
-        color: #fafafa;
         font-size: 1.25rem;
     }
 
@@ -116,5 +147,15 @@
 
     .mood_badge_select {
         padding: 0.75rem;
+    }
+
+    .mood_badge_select:hover {
+        transform: scale(1.1);
+        transition: all 0.3s;
+        cursor: pointer;
+    }
+
+    .mood_badge_select a:hover {
+        color: #fafafa;
     }
 }
