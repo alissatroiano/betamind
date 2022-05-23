@@ -41,7 +41,6 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-
 class Comment(models.Model):
     comment_sender = models.ForeignKey(User, on_delete= models.CASCADE)
     post = models.ForeignKey(Post, on_delete= models.CASCADE)
@@ -52,7 +51,7 @@ class Comment(models.Model):
 
     class Meta:
         verbose_name_plural = "Comments"
-        ordering = ['-create_post']
+        ordering = ['create_post']
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
