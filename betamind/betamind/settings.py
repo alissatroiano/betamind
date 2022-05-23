@@ -70,9 +70,6 @@ INSTALLED_APPS = [
     # Crispy Forms
     'crispy_forms',
     'crispy_bootstrap5',
-
-    # S3 Storage
-    'storages',
 ]
 
 MIDDLEWARE = [
