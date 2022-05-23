@@ -49,12 +49,12 @@ CSRF_TRUSTED_ORIGINS = [
 # Application definition
 
 INSTALLED_APPS = [
-    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
     'django.contrib.staticfiles',
 
     # Custom Apps
@@ -73,7 +73,6 @@ INSTALLED_APPS = [
 
     # S3 Storage
     'storages',
-
 ]
 
 MIDDLEWARE = [
@@ -100,9 +99,9 @@ ACCOUNT_EMAIL_REQUIRED = False
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 ACCOUNT_USERNAME_MIN_LENGTH = 4
-LOGIN_URL = '/accounts/login/'
+LOGIN_URL = '/account/login/'
 LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/accounts/login/'
+LOGOUT_REDIRECT_URL = '/account/login/'
 
 ROOT_URLCONF = 'betamind.urls'
 
@@ -184,8 +183,9 @@ USE_L10N = True
 
 USE_TZ = True
 
-LOGIN_REDIRECT_URL = "/"
+LOGIN_URL = '/accounts/login/'
 
+LOGIN_REDIRECT_URL = "/"
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
@@ -223,14 +223,9 @@ if "USE_AWS" in os.environ:
 if "DEVELOPMENT" not in os.environ:
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Configure AUTH_USER_MODEL to use custom user model.
-AUTH_USER_MODEL = 'core.User'
-
-# Configure BetaMind app for Heroku
-django_heroku.settings(locals())
+# Configure BetaMind app for Herok
