@@ -1,12 +1,8 @@
 from django.db import models
 from django.conf import settings
-<<<<<<< HEAD
-from django.contrib.auth import get_user_model
-=======
 from django.utils.text import slugify
 
 from django.contrib.auth.models import User
->>>>>>> e9e7f6fde0968582d66c53b9409c42d768807fba
 from django.utils import timezone
 
 from datetime import datetime
@@ -45,10 +41,6 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-<<<<<<< HEAD
-=======
-
->>>>>>> e9e7f6fde0968582d66c53b9409c42d768807fba
 class Comment(models.Model):
     comment_sender = models.ForeignKey(User, on_delete= models.CASCADE)
     post = models.ForeignKey(Post, on_delete= models.CASCADE)
