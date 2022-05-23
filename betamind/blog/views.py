@@ -67,14 +67,23 @@ def create_post(request):
 
 @login_required
 def edit_post(request, post_id):
-    post = Post.objects.get(id=post_id)
-    return render(request, 'blog/edit_post.html', {
-        'form': PostForm(instance=post),
-        'moods': Mood.objects.all(),
-        'post': post,
-    })
+    """
+    A method to let users edit a blog post
+    """
+    post = get_object_or_404(Post, id=post_id)
+    if request.method == 'GET':
+        form = PostForm(instance=post)
+        return render(request, 'edit_post.html', {'form': form})
+    else:
+        form = PostForm(request.POST, instance=post)
+        if form.is_valid():
+            post = form.save()
+            return redirect(reverse('blog'), {'post': post})
+        else:
+            print(form.errors)
+            return render(request, 'edit_post.html', {'form': form})
 
-
+    
 # @login_required
 # def delete_post(request, post_id):
 #     post = Post.objects.get(id=post_id)
