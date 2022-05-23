@@ -59,7 +59,6 @@ INSTALLED_APPS = [
 
     # Custom Apps
     'home',
-    'core',
     'profiles',
     'blog',
 
@@ -101,9 +100,9 @@ ACCOUNT_EMAIL_REQUIRED = False
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 ACCOUNT_USERNAME_MIN_LENGTH = 4
-LOGIN_URL = '/accounts/login/'
+LOGIN_URL = '/account/login/'
 LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/accounts/login/'
+LOGOUT_REDIRECT_URL = '/account/login/'
 
 ROOT_URLCONF = 'betamind.urls'
 
@@ -224,14 +223,9 @@ if "USE_AWS" in os.environ:
 if "DEVELOPMENT" not in os.environ:
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Configure AUTH_USER_MODEL to use custom user model.
-AUTH_USER_MODEL = 'core.User'
-
-# Configure BetaMind app for Heroku
-django_heroku.settings(locals())
+# Configure BetaMind app for Herok
