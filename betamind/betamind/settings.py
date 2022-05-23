@@ -199,4 +199,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Configure BetaMind app for Herok
+# Configure BetaMind app for Heroku
+django_heroku.settings(locals())
