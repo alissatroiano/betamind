@@ -194,8 +194,7 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-STATICFILES_STORAGE = "custom_storages.StaticStorage"
-STATICFILES_LOCATION = "static"
+STATICFILES_LOCATION = "/static/"
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
