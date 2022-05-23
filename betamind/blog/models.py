@@ -29,7 +29,7 @@ class Post(models.Model):
     title = models.CharField(max_length=254)
     post_sender = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.CASCADE)
     mood = models.ForeignKey(
-        'Mood', null=True, blank=True, on_delete=models.SET_NULL)
+        'Mood',   blank=True, on_delete=models.SET_NULL)
     content = models.TextField(null=True, blank=True)
     is_public = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)

@@ -36,13 +36,9 @@ class PostForm(forms.ModelForm):
         labels = {
             'title': 'Title',
             'content': 'Content',
-            'mood': 'Select your Mood'
-        }
-        widgets = {
-            'mood': forms.Select(attrs={'class': 'form-control'}),
         }
 
-    
+
     def clean_title(self):
         """
         Raise a validation error if additional_info
