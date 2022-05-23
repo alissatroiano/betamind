@@ -33,10 +33,8 @@ else:
     SECRET_KEY = os.environ.get("SECRET_KEY", get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
-if "DEVELOPMENT" in os.environ:
-    DEBUG = False
-else:
-    DEBUG = True
+DEBUG = False
+
 
 ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = [
@@ -54,7 +52,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.sites',
+    # 'django.contrib.sites',
     'django.contrib.staticfiles',
 
     # Custom Apps
