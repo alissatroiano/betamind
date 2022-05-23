@@ -59,7 +59,6 @@ INSTALLED_APPS = [
 
     # Custom Apps
     'home',
-    'core',
     'profiles',
     'blog',
 
